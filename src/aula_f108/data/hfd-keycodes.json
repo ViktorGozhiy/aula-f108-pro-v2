@@ -1,0 +1,4147 @@
+{
+ "source": "hub.aulacn.com assets/CK01cxog.js export D (keyboardMap: numeric keys 0..127 = firmware key index with its default key; string keys = selectable actions) + English i18n keySet.hfdKey; bytes = 4-byte key action as written by yN() in CvlYv9Yq.js",
+ "entries": [
+  {
+   "mapKey": "0",
+   "name": "ESC",
+   "page": "KEYBOARD",
+   "value": 41,
+   "browserCode": "Escape",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    41,
+    0
+   ]
+  },
+  {
+   "mapKey": "1",
+   "name": "F1",
+   "page": "KEYBOARD",
+   "value": 58,
+   "browserCode": "F1",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    58,
+    0
+   ]
+  },
+  {
+   "mapKey": "2",
+   "name": "F2",
+   "page": "KEYBOARD",
+   "value": 59,
+   "browserCode": "F2",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    59,
+    0
+   ]
+  },
+  {
+   "mapKey": "3",
+   "name": "F3",
+   "page": "KEYBOARD",
+   "value": 60,
+   "browserCode": "F3",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    60,
+    0
+   ]
+  },
+  {
+   "mapKey": "4",
+   "name": "F4",
+   "page": "KEYBOARD",
+   "value": 61,
+   "browserCode": "F4",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    61,
+    0
+   ]
+  },
+  {
+   "mapKey": "5",
+   "name": "F5",
+   "page": "KEYBOARD",
+   "value": 62,
+   "browserCode": "F5",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    62,
+    0
+   ]
+  },
+  {
+   "mapKey": "6",
+   "name": "F6",
+   "page": "KEYBOARD",
+   "value": 63,
+   "browserCode": "F6",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    63,
+    0
+   ]
+  },
+  {
+   "mapKey": "7",
+   "name": "F7",
+   "page": "KEYBOARD",
+   "value": 64,
+   "browserCode": "F7",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    64,
+    0
+   ]
+  },
+  {
+   "mapKey": "8",
+   "name": "F8",
+   "page": "KEYBOARD",
+   "value": 65,
+   "browserCode": "F8",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    65,
+    0
+   ]
+  },
+  {
+   "mapKey": "9",
+   "name": "F9",
+   "page": "KEYBOARD",
+   "value": 66,
+   "browserCode": "F9",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    66,
+    0
+   ]
+  },
+  {
+   "mapKey": "10",
+   "name": "F10",
+   "page": "KEYBOARD",
+   "value": 67,
+   "browserCode": "F10",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    67,
+    0
+   ]
+  },
+  {
+   "mapKey": "11",
+   "name": "F11",
+   "page": "KEYBOARD",
+   "value": 68,
+   "browserCode": "F11",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    68,
+    0
+   ]
+  },
+  {
+   "mapKey": "12",
+   "name": "F12",
+   "page": "KEYBOARD",
+   "value": 69,
+   "browserCode": "F12",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    69,
+    0
+   ]
+  },
+  {
+   "mapKey": "13",
+   "name": "VOLINC",
+   "page": null,
+   "value": null,
+   "browserCode": "VolumeUp",
+   "uiGroup": null,
+   "bytes": null
+  },
+  {
+   "mapKey": "14",
+   "name": "VOLDEC",
+   "page": null,
+   "value": null,
+   "browserCode": "VolumeDown",
+   "uiGroup": null,
+   "bytes": null
+  },
+  {
+   "mapKey": "15",
+   "name": "Mute",
+   "page": null,
+   "value": null,
+   "browserCode": "VolumeMute",
+   "uiGroup": null,
+   "bytes": null
+  },
+  {
+   "mapKey": "16",
+   "name": "` ~",
+   "page": "KEYBOARD",
+   "value": 53,
+   "browserCode": "Backquote",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    53,
+    0
+   ]
+  },
+  {
+   "mapKey": "17",
+   "name": "!1",
+   "page": "KEYBOARD",
+   "value": 30,
+   "browserCode": "Digit1",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    30,
+    0
+   ]
+  },
+  {
+   "mapKey": "18",
+   "name": "@2",
+   "page": "KEYBOARD",
+   "value": 31,
+   "browserCode": "Digit2",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    31,
+    0
+   ]
+  },
+  {
+   "mapKey": "19",
+   "name": "#3",
+   "page": "KEYBOARD",
+   "value": 32,
+   "browserCode": "Digit3",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    32,
+    0
+   ]
+  },
+  {
+   "mapKey": "20",
+   "name": "$4",
+   "page": "KEYBOARD",
+   "value": 33,
+   "browserCode": "Digit4",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    33,
+    0
+   ]
+  },
+  {
+   "mapKey": "21",
+   "name": "%5",
+   "page": "KEYBOARD",
+   "value": 34,
+   "browserCode": "Digit5",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    34,
+    0
+   ]
+  },
+  {
+   "mapKey": "22",
+   "name": "^6",
+   "page": "KEYBOARD",
+   "value": 35,
+   "browserCode": "Digit6",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    35,
+    0
+   ]
+  },
+  {
+   "mapKey": "23",
+   "name": "&7",
+   "page": "KEYBOARD",
+   "value": 36,
+   "browserCode": "Digit7",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    36,
+    0
+   ]
+  },
+  {
+   "mapKey": "24",
+   "name": "*8",
+   "page": "KEYBOARD",
+   "value": 37,
+   "browserCode": "Digit8",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    37,
+    0
+   ]
+  },
+  {
+   "mapKey": "25",
+   "name": "(9",
+   "page": "KEYBOARD",
+   "value": 38,
+   "browserCode": "Digit9",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    38,
+    0
+   ]
+  },
+  {
+   "mapKey": "26",
+   "name": ")0",
+   "page": "KEYBOARD",
+   "value": 39,
+   "browserCode": "Digit0",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    39,
+    0
+   ]
+  },
+  {
+   "mapKey": "27",
+   "name": "_-",
+   "page": "KEYBOARD",
+   "value": 45,
+   "browserCode": "Minus",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    45,
+    0
+   ]
+  },
+  {
+   "mapKey": "28",
+   "name": "+=",
+   "page": "KEYBOARD",
+   "value": 46,
+   "browserCode": "Equal",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    46,
+    0
+   ]
+  },
+  {
+   "mapKey": "29",
+   "name": "NumLc",
+   "page": "KEYBOARD",
+   "value": 83,
+   "browserCode": "NumpadLock",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    83,
+    0
+   ]
+  },
+  {
+   "mapKey": "30",
+   "name": "/",
+   "page": "KEYBOARD",
+   "value": 84,
+   "browserCode": "NumpadDivide",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    84,
+    0
+   ]
+  },
+  {
+   "mapKey": "31",
+   "name": "*",
+   "page": "KEYBOARD",
+   "value": 85,
+   "browserCode": "NumpadMultiply",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    85,
+    0
+   ]
+  },
+  {
+   "mapKey": "32",
+   "name": "Tab",
+   "page": "KEYBOARD",
+   "value": 43,
+   "browserCode": "Tab",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    43,
+    0
+   ]
+  },
+  {
+   "mapKey": "33",
+   "name": "Q",
+   "page": "KEYBOARD",
+   "value": 20,
+   "browserCode": "KeyQ",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    20,
+    0
+   ]
+  },
+  {
+   "mapKey": "34",
+   "name": "W",
+   "page": "KEYBOARD",
+   "value": 26,
+   "browserCode": "KeyW",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    26,
+    0
+   ]
+  },
+  {
+   "mapKey": "35",
+   "name": "E",
+   "page": "KEYBOARD",
+   "value": 8,
+   "browserCode": "KeyE",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    8,
+    0
+   ]
+  },
+  {
+   "mapKey": "36",
+   "name": "R",
+   "page": "KEYBOARD",
+   "value": 21,
+   "browserCode": "KeyR",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    21,
+    0
+   ]
+  },
+  {
+   "mapKey": "37",
+   "name": "T",
+   "page": "KEYBOARD",
+   "value": 23,
+   "browserCode": "KeyT",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    23,
+    0
+   ]
+  },
+  {
+   "mapKey": "38",
+   "name": "Y",
+   "page": "KEYBOARD",
+   "value": 28,
+   "browserCode": "KeyY",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    28,
+    0
+   ]
+  },
+  {
+   "mapKey": "39",
+   "name": "U",
+   "page": "KEYBOARD",
+   "value": 24,
+   "browserCode": "KeyU",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    24,
+    0
+   ]
+  },
+  {
+   "mapKey": "40",
+   "name": "I",
+   "page": "KEYBOARD",
+   "value": 12,
+   "browserCode": "KeyI",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    12,
+    0
+   ]
+  },
+  {
+   "mapKey": "41",
+   "name": "O",
+   "page": "KEYBOARD",
+   "value": 18,
+   "browserCode": "KeyO",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    18,
+    0
+   ]
+  },
+  {
+   "mapKey": "42",
+   "name": "P",
+   "page": "KEYBOARD",
+   "value": 19,
+   "browserCode": "KeyP",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    19,
+    0
+   ]
+  },
+  {
+   "mapKey": "43",
+   "name": "{[",
+   "page": "KEYBOARD",
+   "value": 47,
+   "browserCode": "BracketLeft",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    47,
+    0
+   ]
+  },
+  {
+   "mapKey": "44",
+   "name": "}]",
+   "page": "KEYBOARD",
+   "value": 48,
+   "browserCode": "BracketRight",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    48,
+    0
+   ]
+  },
+  {
+   "mapKey": "45",
+   "name": "7",
+   "page": "KEYBOARD",
+   "value": 95,
+   "browserCode": "Numpad7",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    95,
+    0
+   ]
+  },
+  {
+   "mapKey": "46",
+   "name": "8",
+   "page": "KEYBOARD",
+   "value": 96,
+   "browserCode": "Numpad8",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    96,
+    0
+   ]
+  },
+  {
+   "mapKey": "47",
+   "name": "9",
+   "page": "KEYBOARD",
+   "value": 97,
+   "browserCode": "Numpad9",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    97,
+    0
+   ]
+  },
+  {
+   "mapKey": "48",
+   "name": "CapsLock",
+   "page": "KEYBOARD",
+   "value": 57,
+   "browserCode": "CapsLock",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    57,
+    0
+   ]
+  },
+  {
+   "mapKey": "49",
+   "name": "A",
+   "page": "KEYBOARD",
+   "value": 4,
+   "browserCode": "KeyA",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    4,
+    0
+   ]
+  },
+  {
+   "mapKey": "50",
+   "name": "S",
+   "page": "KEYBOARD",
+   "value": 22,
+   "browserCode": "KeyS",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    22,
+    0
+   ]
+  },
+  {
+   "mapKey": "51",
+   "name": "D",
+   "page": "KEYBOARD",
+   "value": 7,
+   "browserCode": "KeyD",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    7,
+    0
+   ]
+  },
+  {
+   "mapKey": "52",
+   "name": "F",
+   "page": "KEYBOARD",
+   "value": 9,
+   "browserCode": "KeyF",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    9,
+    0
+   ]
+  },
+  {
+   "mapKey": "53",
+   "name": "G",
+   "page": "KEYBOARD",
+   "value": 10,
+   "browserCode": "KeyG",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    10,
+    0
+   ]
+  },
+  {
+   "mapKey": "54",
+   "name": "H",
+   "page": "KEYBOARD",
+   "value": 11,
+   "browserCode": "KeyH",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    11,
+    0
+   ]
+  },
+  {
+   "mapKey": "55",
+   "name": "J",
+   "page": "KEYBOARD",
+   "value": 13,
+   "browserCode": "KeyJ",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    13,
+    0
+   ]
+  },
+  {
+   "mapKey": "56",
+   "name": "K",
+   "page": "KEYBOARD",
+   "value": 14,
+   "browserCode": "KeyK",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    14,
+    0
+   ]
+  },
+  {
+   "mapKey": "57",
+   "name": "L",
+   "page": "KEYBOARD",
+   "value": 15,
+   "browserCode": "KeyL",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    15,
+    0
+   ]
+  },
+  {
+   "mapKey": "58",
+   "name": ":;",
+   "page": "KEYBOARD",
+   "value": 51,
+   "browserCode": "Semicolon",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    51,
+    0
+   ]
+  },
+  {
+   "mapKey": "59",
+   "name": "\"'",
+   "page": "KEYBOARD",
+   "value": 52,
+   "browserCode": "Quote",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    52,
+    0
+   ]
+  },
+  {
+   "mapKey": "60",
+   "name": "|\\",
+   "page": "KEYBOARD",
+   "value": 49,
+   "browserCode": "Backslash",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    49,
+    0
+   ]
+  },
+  {
+   "mapKey": "61",
+   "name": "4",
+   "page": "KEYBOARD",
+   "value": 92,
+   "browserCode": "Numpad4",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    92,
+    0
+   ]
+  },
+  {
+   "mapKey": "62",
+   "name": "5",
+   "page": "KEYBOARD",
+   "value": 93,
+   "browserCode": "Numpad5",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    93,
+    0
+   ]
+  },
+  {
+   "mapKey": "63",
+   "name": "6",
+   "page": "KEYBOARD",
+   "value": 94,
+   "browserCode": "Numpad6",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    94,
+    0
+   ]
+  },
+  {
+   "mapKey": "64",
+   "name": "L-Shift",
+   "page": "KEYBOARD",
+   "value": 225,
+   "browserCode": "ShiftLeft",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    225,
+    0
+   ]
+  },
+  {
+   "mapKey": "65",
+   "name": "Z",
+   "page": "KEYBOARD",
+   "value": 29,
+   "browserCode": "KeyZ",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    29,
+    0
+   ]
+  },
+  {
+   "mapKey": "66",
+   "name": "X",
+   "page": "KEYBOARD",
+   "value": 27,
+   "browserCode": "KeyX",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    27,
+    0
+   ]
+  },
+  {
+   "mapKey": "67",
+   "name": "C",
+   "page": "KEYBOARD",
+   "value": 6,
+   "browserCode": "KeyC",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    6,
+    0
+   ]
+  },
+  {
+   "mapKey": "68",
+   "name": "V",
+   "page": "KEYBOARD",
+   "value": 25,
+   "browserCode": "KeyV",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    25,
+    0
+   ]
+  },
+  {
+   "mapKey": "69",
+   "name": "B",
+   "page": "KEYBOARD",
+   "value": 5,
+   "browserCode": "KeyB",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    5,
+    0
+   ]
+  },
+  {
+   "mapKey": "70",
+   "name": "N",
+   "page": "KEYBOARD",
+   "value": 17,
+   "browserCode": "KeyN",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    17,
+    0
+   ]
+  },
+  {
+   "mapKey": "71",
+   "name": "M",
+   "page": "KEYBOARD",
+   "value": 16,
+   "browserCode": "KeyM",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    16,
+    0
+   ]
+  },
+  {
+   "mapKey": "72",
+   "name": "<,",
+   "page": "KEYBOARD",
+   "value": 54,
+   "browserCode": "Comma",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    54,
+    0
+   ]
+  },
+  {
+   "mapKey": "73",
+   "name": ">.",
+   "page": "KEYBOARD",
+   "value": 55,
+   "browserCode": "Period",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    55,
+    0
+   ]
+  },
+  {
+   "mapKey": "74",
+   "name": "?/",
+   "page": "KEYBOARD",
+   "value": 56,
+   "browserCode": "Slash",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    56,
+    0
+   ]
+  },
+  {
+   "mapKey": "75",
+   "name": "R-Shift",
+   "page": "KEYBOARD",
+   "value": 229,
+   "browserCode": "ShiftRight",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    229,
+    0
+   ]
+  },
+  {
+   "mapKey": "76",
+   "name": "Enter",
+   "page": "KEYBOARD",
+   "value": 40,
+   "browserCode": "Enter",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    40,
+    0
+   ]
+  },
+  {
+   "mapKey": "77",
+   "name": "1",
+   "page": "KEYBOARD",
+   "value": 89,
+   "browserCode": "Numpad1",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    89,
+    0
+   ]
+  },
+  {
+   "mapKey": "78",
+   "name": "2",
+   "page": "KEYBOARD",
+   "value": 90,
+   "browserCode": "Numpad2",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    90,
+    0
+   ]
+  },
+  {
+   "mapKey": "79",
+   "name": "3",
+   "page": "KEYBOARD",
+   "value": 91,
+   "browserCode": "Numpad3",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    91,
+    0
+   ]
+  },
+  {
+   "mapKey": "80",
+   "name": "L-Ctrl",
+   "page": "KEYBOARD",
+   "value": 224,
+   "browserCode": "ControlLeft",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    224,
+    0
+   ]
+  },
+  {
+   "mapKey": "81",
+   "name": "L-Win/CMD",
+   "page": "KEYBOARD",
+   "value": 227,
+   "browserCode": "MetaLeft",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    227,
+    0
+   ]
+  },
+  {
+   "mapKey": "82",
+   "name": "L-Alt/CPT",
+   "page": "KEYBOARD",
+   "value": 226,
+   "browserCode": "AltLeft",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    226,
+    0
+   ]
+  },
+  {
+   "mapKey": "83",
+   "name": "Space",
+   "page": "KEYBOARD",
+   "value": 44,
+   "browserCode": "Space",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    44,
+    0
+   ]
+  },
+  {
+   "mapKey": "84",
+   "name": "R-Alt/CMD",
+   "page": "KEYBOARD",
+   "value": 230,
+   "browserCode": "AltRight",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    230,
+    0
+   ]
+  },
+  {
+   "mapKey": "85",
+   "name": "Fn",
+   "page": "KEYBOARD",
+   "value": 175,
+   "browserCode": "Fn",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    175,
+    0
+   ]
+  },
+  {
+   "mapKey": "86",
+   "name": "APP",
+   "page": "KEYBOARD",
+   "value": 101,
+   "browserCode": "ContextMenu",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    101,
+    0
+   ]
+  },
+  {
+   "mapKey": "87",
+   "name": "R-Ctrl/CPT",
+   "page": "KEYBOARD",
+   "value": 228,
+   "browserCode": "ControlRight",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    228,
+    0
+   ]
+  },
+  {
+   "mapKey": "88",
+   "name": "←",
+   "page": "KEYBOARD",
+   "value": 80,
+   "browserCode": "ArrowLeft",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    80,
+    0
+   ]
+  },
+  {
+   "mapKey": "89",
+   "name": "↓",
+   "page": "KEYBOARD",
+   "value": 81,
+   "browserCode": "ArrowDown",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    81,
+    0
+   ]
+  },
+  {
+   "mapKey": "90",
+   "name": "↑",
+   "page": "KEYBOARD",
+   "value": 82,
+   "browserCode": "ArrowUp",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    82,
+    0
+   ]
+  },
+  {
+   "mapKey": "91",
+   "name": "→",
+   "page": "KEYBOARD",
+   "value": 79,
+   "browserCode": "ArrowRight",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    79,
+    0
+   ]
+  },
+  {
+   "mapKey": "92",
+   "name": "Back Space",
+   "page": "KEYBOARD",
+   "value": 42,
+   "browserCode": "Backspace",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    42,
+    0
+   ]
+  },
+  {
+   "mapKey": "93",
+   "name": "0",
+   "page": "KEYBOARD",
+   "value": 98,
+   "browserCode": "Numpad0",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    98,
+    0
+   ]
+  },
+  {
+   "mapKey": "94",
+   "name": ".",
+   "page": "KEYBOARD",
+   "value": 99,
+   "browserCode": "NumpadDecimal",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    99,
+    0
+   ]
+  },
+  {
+   "mapKey": "95",
+   "name": "ENTER",
+   "page": "KEYBOARD",
+   "value": 88,
+   "browserCode": "NumpadEnter",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    88,
+    0
+   ]
+  },
+  {
+   "mapKey": "96",
+   "name": "CALCU",
+   "page": null,
+   "value": null,
+   "browserCode": "NumpadEqual",
+   "uiGroup": null,
+   "bytes": null
+  },
+  {
+   "mapKey": "97",
+   "name": "K42",
+   "page": "KEYBOARD",
+   "value": 50,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    50,
+    0
+   ]
+  },
+  {
+   "mapKey": "98",
+   "name": "K45",
+   "page": "KEYBOARD",
+   "value": 100,
+   "browserCode": "NumpadComma",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    100,
+    0
+   ]
+  },
+  {
+   "mapKey": "99",
+   "name": "PRINT",
+   "page": "KEYBOARD",
+   "value": 70,
+   "browserCode": "PrintScreen",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    70,
+    0
+   ]
+  },
+  {
+   "mapKey": "100",
+   "name": "SCROLL",
+   "page": "KEYBOARD",
+   "value": 71,
+   "browserCode": "ScrollLock",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    71,
+    0
+   ]
+  },
+  {
+   "mapKey": "101",
+   "name": "R-Win",
+   "page": "KEYBOARD",
+   "value": 231,
+   "browserCode": "MetaRight",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    231,
+    0
+   ]
+  },
+  {
+   "mapKey": "102",
+   "name": "PAUSE",
+   "page": "KEYBOARD",
+   "value": 72,
+   "browserCode": "Pause",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    72,
+    0
+   ]
+  },
+  {
+   "mapKey": "103",
+   "name": "Insert",
+   "page": "KEYBOARD",
+   "value": 73,
+   "browserCode": "Insert",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    73,
+    0
+   ]
+  },
+  {
+   "mapKey": "104",
+   "name": "Home",
+   "page": "KEYBOARD",
+   "value": 74,
+   "browserCode": "Home",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    74,
+    0
+   ]
+  },
+  {
+   "mapKey": "105",
+   "name": "PgUp",
+   "page": "KEYBOARD",
+   "value": 75,
+   "browserCode": "PageUp",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    75,
+    0
+   ]
+  },
+  {
+   "mapKey": "106",
+   "name": "Del",
+   "page": "KEYBOARD",
+   "value": 76,
+   "browserCode": "Delete",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    76,
+    0
+   ]
+  },
+  {
+   "mapKey": "107",
+   "name": "End",
+   "page": "KEYBOARD",
+   "value": 77,
+   "browserCode": "End",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    77,
+    0
+   ]
+  },
+  {
+   "mapKey": "108",
+   "name": "PgDn",
+   "page": "KEYBOARD",
+   "value": 78,
+   "browserCode": "PageDown",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    78,
+    0
+   ]
+  },
+  {
+   "mapKey": "109",
+   "name": "-",
+   "page": "KEYBOARD",
+   "value": 86,
+   "browserCode": "NumpadSubtract",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    86,
+    0
+   ]
+  },
+  {
+   "mapKey": "110",
+   "name": "+",
+   "page": "KEYBOARD",
+   "value": 87,
+   "browserCode": "NumpadAdd",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    87,
+    0
+   ]
+  },
+  {
+   "mapKey": "111",
+   "name": "SWITCH",
+   "page": null,
+   "value": null,
+   "browserCode": "Switch",
+   "uiGroup": null,
+   "bytes": null
+  },
+  {
+   "mapKey": "112",
+   "name": "K107",
+   "page": "KEYBOARD",
+   "value": 133,
+   "browserCode": "F13",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    133,
+    0
+   ]
+  },
+  {
+   "mapKey": "113",
+   "name": "K56",
+   "page": "KEYBOARD",
+   "value": 135,
+   "browserCode": "F15",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    135,
+    0
+   ]
+  },
+  {
+   "mapKey": "114",
+   "name": "K14",
+   "page": "KEYBOARD",
+   "value": 137,
+   "browserCode": "F17",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    137,
+    0
+   ]
+  },
+  {
+   "mapKey": "115",
+   "name": "K133",
+   "page": "KEYBOARD",
+   "value": 136,
+   "browserCode": "F16",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    136,
+    0
+   ]
+  },
+  {
+   "mapKey": "116",
+   "name": "Mute",
+   "page": "KEYBOARD",
+   "value": 138,
+   "browserCode": "F18",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    138,
+    0
+   ]
+  },
+  {
+   "mapKey": "117",
+   "name": "Calculator",
+   "page": "KEYBOARD",
+   "value": 139,
+   "browserCode": "F19",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    139,
+    0
+   ]
+  },
+  {
+   "mapKey": "118",
+   "name": "Volume -",
+   "page": "KEYBOARD",
+   "value": 144,
+   "browserCode": "F24",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    144,
+    0
+   ]
+  },
+  {
+   "mapKey": "119",
+   "name": "Volume +",
+   "page": "KEYBOARD",
+   "value": 145,
+   "browserCode": "F25",
+   "uiGroup": null,
+   "bytes": [
+    2,
+    0,
+    145,
+    0
+   ]
+  },
+  {
+   "mapKey": "120",
+   "name": "F13",
+   "page": null,
+   "value": null,
+   "browserCode": "F13",
+   "uiGroup": null,
+   "bytes": null
+  },
+  {
+   "mapKey": "1-MOUSE-1",
+   "name": "Mouse Left",
+   "page": "MOUSE",
+   "value": 1,
+   "browserCode": "MouseLeft",
+   "uiGroup": 1,
+   "bytes": [
+    1,
+    1,
+    1,
+    0
+   ]
+  },
+  {
+   "mapKey": "4-MOUSE-1",
+   "name": "Mouse Middle",
+   "page": "MOUSE",
+   "value": 4,
+   "browserCode": "MouseMiddle",
+   "uiGroup": 1,
+   "bytes": [
+    1,
+    1,
+    4,
+    0
+   ]
+  },
+  {
+   "mapKey": "2-MOUSE-1",
+   "name": "Mouse Right",
+   "page": "MOUSE",
+   "value": 2,
+   "browserCode": "MouseRight",
+   "uiGroup": 1,
+   "bytes": [
+    1,
+    1,
+    2,
+    0
+   ]
+  },
+  {
+   "mapKey": "1-MOUSE-3",
+   "name": "Scroll Up",
+   "page": "MOUSE",
+   "value": 1,
+   "browserCode": "",
+   "uiGroup": 1,
+   "bytes": [
+    1,
+    3,
+    1,
+    0
+   ]
+  },
+  {
+   "mapKey": "255-MOUSE-3",
+   "name": "Scroll Down",
+   "page": "MOUSE",
+   "value": 255,
+   "browserCode": "",
+   "uiGroup": 1,
+   "bytes": [
+    1,
+    3,
+    255,
+    0
+   ]
+  },
+  {
+   "mapKey": "16-MOUSE-1",
+   "name": "Mouse Forward",
+   "page": "MOUSE",
+   "value": 16,
+   "browserCode": "",
+   "uiGroup": 1,
+   "bytes": [
+    1,
+    1,
+    16,
+    0
+   ]
+  },
+  {
+   "mapKey": "8-MOUSE-1",
+   "name": "Mouse Back",
+   "page": "MOUSE",
+   "value": 8,
+   "browserCode": "",
+   "uiGroup": 1,
+   "bytes": [
+    1,
+    1,
+    8,
+    0
+   ]
+  },
+  {
+   "mapKey": "404-CONSUMER_KEY",
+   "name": "My Computer",
+   "page": "CONSUMER_KEY",
+   "value": 404,
+   "browserCode": "",
+   "uiGroup": 0,
+   "bytes": [
+    3,
+    148,
+    1,
+    0
+   ]
+  },
+  {
+   "mapKey": "402-CONSUMER_KEY",
+   "name": "Calculator",
+   "page": "CONSUMER_KEY",
+   "value": 402,
+   "browserCode": "",
+   "uiGroup": 0,
+   "bytes": [
+    3,
+    146,
+    1,
+    0
+   ]
+  },
+  {
+   "mapKey": "394-CONSUMER_KEY",
+   "name": "Email",
+   "page": "CONSUMER_KEY",
+   "value": 394,
+   "browserCode": "",
+   "uiGroup": 0,
+   "bytes": [
+    3,
+    138,
+    1,
+    0
+   ]
+  },
+  {
+   "mapKey": "387-CONSUMER_KEY",
+   "name": "Multimedia",
+   "page": "CONSUMER_KEY",
+   "value": 387,
+   "browserCode": "",
+   "uiGroup": 0,
+   "bytes": [
+    3,
+    131,
+    1,
+    0
+   ]
+  },
+  {
+   "mapKey": "205-CONSUMER_KEY",
+   "name": "Play/Pause",
+   "page": "CONSUMER_KEY",
+   "value": 205,
+   "browserCode": "",
+   "uiGroup": 0,
+   "bytes": [
+    3,
+    205,
+    0,
+    0
+   ]
+  },
+  {
+   "mapKey": "183-CONSUMER_KEY",
+   "name": "Stop",
+   "page": "CONSUMER_KEY",
+   "value": 183,
+   "browserCode": "",
+   "uiGroup": 0,
+   "bytes": [
+    3,
+    183,
+    0,
+    0
+   ]
+  },
+  {
+   "mapKey": "182-CONSUMER_KEY",
+   "name": "Previous Track",
+   "page": "CONSUMER_KEY",
+   "value": 182,
+   "browserCode": "",
+   "uiGroup": 0,
+   "bytes": [
+    3,
+    182,
+    0,
+    0
+   ]
+  },
+  {
+   "mapKey": "181-CONSUMER_KEY",
+   "name": "Next Track",
+   "page": "CONSUMER_KEY",
+   "value": 181,
+   "browserCode": "",
+   "uiGroup": 0,
+   "bytes": [
+    3,
+    181,
+    0,
+    0
+   ]
+  },
+  {
+   "mapKey": "233-CONSUMER_KEY",
+   "name": "Volume +",
+   "page": "CONSUMER_KEY",
+   "value": 233,
+   "browserCode": "",
+   "uiGroup": 0,
+   "bytes": [
+    3,
+    233,
+    0,
+    0
+   ]
+  },
+  {
+   "mapKey": "234-CONSUMER_KEY",
+   "name": "Volume -",
+   "page": "CONSUMER_KEY",
+   "value": 234,
+   "browserCode": "",
+   "uiGroup": 0,
+   "bytes": [
+    3,
+    234,
+    0,
+    0
+   ]
+  },
+  {
+   "mapKey": "226-CONSUMER_KEY",
+   "name": "Mute",
+   "page": "CONSUMER_KEY",
+   "value": 226,
+   "browserCode": "",
+   "uiGroup": 0,
+   "bytes": [
+    3,
+    226,
+    0,
+    0
+   ]
+  },
+  {
+   "mapKey": "547-CONSUMER_KEY",
+   "name": "Home",
+   "page": "CONSUMER_KEY",
+   "value": 547,
+   "browserCode": "",
+   "uiGroup": 0,
+   "bytes": [
+    3,
+    35,
+    2,
+    0
+   ]
+  },
+  {
+   "mapKey": "551-CONSUMER_KEY",
+   "name": "Refresh",
+   "page": "CONSUMER_KEY",
+   "value": 551,
+   "browserCode": "",
+   "uiGroup": 0,
+   "bytes": [
+    3,
+    39,
+    2,
+    0
+   ]
+  },
+  {
+   "mapKey": "549-CONSUMER_KEY",
+   "name": "Forward",
+   "page": "CONSUMER_KEY",
+   "value": 549,
+   "browserCode": "",
+   "uiGroup": 0,
+   "bytes": [
+    3,
+    37,
+    2,
+    0
+   ]
+  },
+  {
+   "mapKey": "548-CONSUMER_KEY",
+   "name": "Back",
+   "page": "CONSUMER_KEY",
+   "value": 548,
+   "browserCode": "",
+   "uiGroup": 0,
+   "bytes": [
+    3,
+    36,
+    2,
+    0
+   ]
+  },
+  {
+   "mapKey": "554-CONSUMER_KEY",
+   "name": "Favorites",
+   "page": "CONSUMER_KEY",
+   "value": 554,
+   "browserCode": "",
+   "uiGroup": 0,
+   "bytes": [
+    3,
+    42,
+    2,
+    0
+   ]
+  },
+  {
+   "mapKey": "545-CONSUMER_KEY",
+   "name": "Search",
+   "page": "CONSUMER_KEY",
+   "value": 545,
+   "browserCode": "",
+   "uiGroup": 0,
+   "bytes": [
+    3,
+    33,
+    2,
+    0
+   ]
+  },
+  {
+   "mapKey": "1-FUNC",
+   "name": "Factory Reset",
+   "page": "FUNC",
+   "value": 1,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "mapKey": "2-FUNC",
+   "name": "Bluetooth Channel 1",
+   "page": "FUNC",
+   "value": 2,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    2
+   ]
+  },
+  {
+   "mapKey": "3-FUNC",
+   "name": "Bluetooth Channel 2",
+   "page": "FUNC",
+   "value": 3,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    3
+   ]
+  },
+  {
+   "mapKey": "4-FUNC",
+   "name": "Bluetooth Channel 3",
+   "page": "FUNC",
+   "value": 4,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    4
+   ]
+  },
+  {
+   "mapKey": "5-FUNC",
+   "name": "Wireless Reconnect",
+   "page": "FUNC",
+   "value": 5,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    5
+   ]
+  },
+  {
+   "mapKey": "6-FUNC",
+   "name": "F-Lock Switch",
+   "page": "FUNC",
+   "value": 6,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    6
+   ]
+  },
+  {
+   "mapKey": "7-FUNC",
+   "name": "Battery Check",
+   "page": "FUNC",
+   "value": 7,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    7
+   ]
+  },
+  {
+   "mapKey": "8-FUNC",
+   "name": "WIN",
+   "page": "FUNC",
+   "value": 8,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    8
+   ]
+  },
+  {
+   "mapKey": "9-FUNC",
+   "name": "MAC",
+   "page": "FUNC",
+   "value": 9,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    9
+   ]
+  },
+  {
+   "mapKey": "10-FUNC",
+   "name": "ANDROID",
+   "page": "FUNC",
+   "value": 10,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    10
+   ]
+  },
+  {
+   "mapKey": "11-FUNC",
+   "name": "Lighting Effect Toggle",
+   "page": "FUNC",
+   "value": 11,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    11
+   ]
+  },
+  {
+   "mapKey": "12-FUNC",
+   "name": "Lighting Color Toggle",
+   "page": "FUNC",
+   "value": 12,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    12
+   ]
+  },
+  {
+   "mapKey": "13-FUNC",
+   "name": "Lighting Brightness +",
+   "page": "FUNC",
+   "value": 13,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    13
+   ]
+  },
+  {
+   "mapKey": "14-FUNC",
+   "name": "Lighting Brightness -",
+   "page": "FUNC",
+   "value": 14,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    14
+   ]
+  },
+  {
+   "mapKey": "15-FUNC",
+   "name": "Lighting Speed +",
+   "page": "FUNC",
+   "value": 15,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    15
+   ]
+  },
+  {
+   "mapKey": "16-FUNC",
+   "name": "Lighting Speed -",
+   "page": "FUNC",
+   "value": 16,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    16
+   ]
+  },
+  {
+   "mapKey": "17-FUNC",
+   "name": "Turn Off Lighting",
+   "page": "FUNC",
+   "value": 17,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    17
+   ]
+  },
+  {
+   "mapKey": "18-FUNC",
+   "name": "Alt+Tab",
+   "page": "FUNC",
+   "value": 18,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    18
+   ]
+  },
+  {
+   "mapKey": "19-FUNC",
+   "name": "Win+E",
+   "page": "FUNC",
+   "value": 19,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    19
+   ]
+  },
+  {
+   "mapKey": "20-FUNC",
+   "name": "Win+Tab",
+   "page": "FUNC",
+   "value": 20,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    20
+   ]
+  },
+  {
+   "mapKey": "21-FUNC",
+   "name": "Win+H",
+   "page": "FUNC",
+   "value": 21,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    21
+   ]
+  },
+  {
+   "mapKey": "22-FUNC",
+   "name": "Win Lock",
+   "page": "FUNC",
+   "value": 22,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    22
+   ]
+  },
+  {
+   "mapKey": "23-FUNC",
+   "name": "Side Light Effect Toggle",
+   "page": "FUNC",
+   "value": 23,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    23
+   ]
+  },
+  {
+   "mapKey": "24-FUNC",
+   "name": "Side Light Color Toggle",
+   "page": "FUNC",
+   "value": 24,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    24
+   ]
+  },
+  {
+   "mapKey": "25-FUNC",
+   "name": "Side Light Brightness",
+   "page": "FUNC",
+   "value": 25,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    25
+   ]
+  },
+  {
+   "mapKey": "26-FUNC",
+   "name": "Side Light Speed",
+   "page": "FUNC",
+   "value": 26,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    26
+   ]
+  },
+  {
+   "mapKey": "27-FUNC",
+   "name": "Front Light Bar Effect Toggle",
+   "page": "FUNC",
+   "value": 27,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    27
+   ]
+  },
+  {
+   "mapKey": "28-FUNC",
+   "name": "Front Light Bar Speed",
+   "page": "FUNC",
+   "value": 28,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    28
+   ]
+  },
+  {
+   "mapKey": "29-FUNC",
+   "name": "Front Light Bar Color Toggle",
+   "page": "FUNC",
+   "value": 29,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    29
+   ]
+  },
+  {
+   "mapKey": "30-FUNC",
+   "name": "Ctrl + UP",
+   "page": "FUNC",
+   "value": 30,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    30
+   ]
+  },
+  {
+   "mapKey": "31-FUNC",
+   "name": "USB Mode",
+   "page": "FUNC",
+   "value": 31,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    31
+   ]
+  },
+  {
+   "mapKey": "32-FUNC",
+   "name": "Light Direction",
+   "page": "FUNC",
+   "value": 32,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    32
+   ]
+  },
+  {
+   "mapKey": "33-FUNC",
+   "name": "ALT + ESC",
+   "page": "FUNC",
+   "value": 33,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    33
+   ]
+  },
+  {
+   "mapKey": "34-FUNC",
+   "name": "SHIFT + GAT",
+   "page": "FUNC",
+   "value": 34,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    34
+   ]
+  },
+  {
+   "mapKey": "35-FUNC",
+   "name": "Screen Left Cut",
+   "page": "FUNC",
+   "value": 35,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    35
+   ]
+  },
+  {
+   "mapKey": "36-FUNC",
+   "name": "Screen Right Cut",
+   "page": "FUNC",
+   "value": 36,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    36
+   ]
+  },
+  {
+   "mapKey": "37-FUNC",
+   "name": "Screen Confirm",
+   "page": "FUNC",
+   "value": 37,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    37
+   ]
+  },
+  {
+   "mapKey": "38-FUNC",
+   "name": "Test Lighting",
+   "page": "FUNC",
+   "value": 38,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    38
+   ]
+  },
+  {
+   "mapKey": "39-FUNC",
+   "name": "Turn Off Screen",
+   "page": "FUNC",
+   "value": 39,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    39
+   ]
+  },
+  {
+   "mapKey": "40-FUNC",
+   "name": "Dot Matrix Effect Toggle",
+   "page": "FUNC",
+   "value": 40,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    40
+   ]
+  },
+  {
+   "mapKey": "41-FUNC",
+   "name": "Dot Matrix Brightness +",
+   "page": "FUNC",
+   "value": 41,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    41
+   ]
+  },
+  {
+   "mapKey": "42-FUNC",
+   "name": "Dot Matrix Brightness -",
+   "page": "FUNC",
+   "value": 42,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    42
+   ]
+  },
+  {
+   "mapKey": "43-FUNC",
+   "name": "Dot Matrix Speed -",
+   "page": "FUNC",
+   "value": 43,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    43
+   ]
+  },
+  {
+   "mapKey": "44-FUNC",
+   "name": "Dot Matrix Speed +",
+   "page": "FUNC",
+   "value": 44,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    44
+   ]
+  },
+  {
+   "mapKey": "45-FUNC",
+   "name": "Single/All Key Wireless Wake",
+   "page": "FUNC",
+   "value": 45,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    45
+   ]
+  },
+  {
+   "mapKey": "46-FUNC",
+   "name": "Knob Mode Switch",
+   "page": "FUNC",
+   "value": 46,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    46
+   ]
+  },
+  {
+   "mapKey": "47-FUNC",
+   "name": "WIN + X",
+   "page": "FUNC",
+   "value": 47,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    47
+   ]
+  },
+  {
+   "mapKey": "48-FUNC",
+   "name": "CTRL_CAPS Swap",
+   "page": "FUNC",
+   "value": 48,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    48
+   ]
+  },
+  {
+   "mapKey": "49-FUNC",
+   "name": "Disable/Enable Driver Settings",
+   "page": "FUNC",
+   "value": 49,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    49
+   ]
+  },
+  {
+   "mapKey": "50-FUNC",
+   "name": "CTRL+↓",
+   "page": "FUNC",
+   "value": 50,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    50
+   ]
+  },
+  {
+   "mapKey": "51-FUNC",
+   "name": "Light Effect Forward",
+   "page": "FUNC",
+   "value": 51,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    51
+   ]
+  },
+  {
+   "mapKey": "52-FUNC",
+   "name": "Light Effect Reverse",
+   "page": "FUNC",
+   "value": 52,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    52
+   ]
+  },
+  {
+   "mapKey": "53-FUNC",
+   "name": "WIN + D",
+   "page": "FUNC",
+   "value": 53,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    53
+   ]
+  },
+  {
+   "mapKey": "54-FUNC",
+   "name": "Pickup Light Color Toggle",
+   "page": "FUNC",
+   "value": 54,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    54
+   ]
+  },
+  {
+   "mapKey": "55-FUNC",
+   "name": "Pickup Light Mode Toggle",
+   "page": "FUNC",
+   "value": 55,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    55
+   ]
+  },
+  {
+   "mapKey": "56-FUNC",
+   "name": "Pickup Light Toggle",
+   "page": "FUNC",
+   "value": 56,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    56
+   ]
+  },
+  {
+   "mapKey": "57-FUNC",
+   "name": "Home",
+   "page": "FUNC",
+   "value": 57,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    57
+   ]
+  },
+  {
+   "mapKey": "58-FUNC",
+   "name": "IOS",
+   "page": "FUNC",
+   "value": 58,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    58
+   ]
+  },
+  {
+   "mapKey": "59-FUNC",
+   "name": "Dot Matrix Test Mode",
+   "page": "FUNC",
+   "value": 59,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    59
+   ]
+  },
+  {
+   "mapKey": "60-FUNC",
+   "name": "Dot Matrix Test Color",
+   "page": "FUNC",
+   "value": 60,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    60
+   ]
+  },
+  {
+   "mapKey": "61-FUNC",
+   "name": "Front Light Bar Brightness",
+   "page": "FUNC",
+   "value": 61,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    61
+   ]
+  },
+  {
+   "mapKey": "62-FUNC",
+   "name": "Dot Matrix Toggle",
+   "page": "FUNC",
+   "value": 62,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    62
+   ]
+  },
+  {
+   "mapKey": "63-FUNC",
+   "name": "GIF Mode",
+   "page": "FUNC",
+   "value": 63,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    63
+   ]
+  },
+  {
+   "mapKey": "64-FUNC",
+   "name": "Front Light Bar Speed +",
+   "page": "FUNC",
+   "value": 64,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    64
+   ]
+  },
+  {
+   "mapKey": "65-FUNC",
+   "name": "Front Light Bar Speed -",
+   "page": "FUNC",
+   "value": 65,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    65
+   ]
+  },
+  {
+   "mapKey": "66-FUNC",
+   "name": "Front Light Bar Brightness +",
+   "page": "FUNC",
+   "value": 66,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    66
+   ]
+  },
+  {
+   "mapKey": "67-FUNC",
+   "name": "Front Light Bar Brightness -",
+   "page": "FUNC",
+   "value": 67,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    67
+   ]
+  },
+  {
+   "mapKey": "68-FUNC",
+   "name": "Disable/Enable Key Shortcuts",
+   "page": "FUNC",
+   "value": 68,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    68
+   ]
+  },
+  {
+   "mapKey": "69-FUNC",
+   "name": "Bluetooth Channel 4",
+   "page": "FUNC",
+   "value": 69,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    69
+   ]
+  },
+  {
+   "mapKey": "70-FUNC",
+   "name": "Bluetooth Channel 5",
+   "page": "FUNC",
+   "value": 70,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    70
+   ]
+  },
+  {
+   "mapKey": "71-FUNC",
+   "name": "Custom Lighting 1",
+   "page": "FUNC",
+   "value": 71,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    71
+   ]
+  },
+  {
+   "mapKey": "72-FUNC",
+   "name": "Custom Lighting 2",
+   "page": "FUNC",
+   "value": 72,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    72
+   ]
+  },
+  {
+   "mapKey": "73-FUNC",
+   "name": "Toggle Extreme Power Save",
+   "page": "FUNC",
+   "value": 73,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    73
+   ]
+  },
+  {
+   "mapKey": "74-FUNC",
+   "name": "Side Light Block Color",
+   "page": "FUNC",
+   "value": 74,
+   "browserCode": "",
+   "uiGroup": 2,
+   "bytes": [
+    13,
+    0,
+    0,
+    74
+   ]
+  },
+  {
+   "mapKey": "75-FUNC",
+   "name": "Open Driver",
+   "page": "FUNC",
+   "value": 75,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    75
+   ]
+  },
+  {
+   "mapKey": "76-FUNC",
+   "name": "0.1/0.01mm RT Precision Switch",
+   "page": "FUNC",
+   "value": 76,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    76
+   ]
+  },
+  {
+   "mapKey": "77-FUNC",
+   "name": "Top/Bottom LED Switch",
+   "page": "FUNC",
+   "value": 77,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    77
+   ]
+  },
+  {
+   "mapKey": "78-FUNC",
+   "name": "Light Direction Switch",
+   "page": "FUNC",
+   "value": 78,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    78
+   ]
+  },
+  {
+   "mapKey": "79-FUNC",
+   "name": "Arrow Key Swap",
+   "page": "FUNC",
+   "value": 79,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    79
+   ]
+  },
+  {
+   "mapKey": "80-FUNC",
+   "name": "Backlight Brightness Cycle",
+   "page": "FUNC",
+   "value": 80,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    80
+   ]
+  },
+  {
+   "mapKey": "81-FUNC",
+   "name": "Backlight Speed Cycle",
+   "page": "FUNC",
+   "value": 81,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    81
+   ]
+  },
+  {
+   "mapKey": "82-FUNC",
+   "name": "Switch USB Mode",
+   "page": "FUNC",
+   "value": 82,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    82
+   ]
+  },
+  {
+   "mapKey": "83-FUNC",
+   "name": "Turn Off Rear and Front Lights",
+   "page": "FUNC",
+   "value": 83,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    83
+   ]
+  },
+  {
+   "mapKey": "84-FUNC",
+   "name": "Display Language to Chinese",
+   "page": "FUNC",
+   "value": 84,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    84
+   ]
+  },
+  {
+   "mapKey": "85-FUNC",
+   "name": "Display Language to English",
+   "page": "FUNC",
+   "value": 85,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    85
+   ]
+  },
+  {
+   "mapKey": "86-FUNC",
+   "name": "CTRL + SPACEBAR",
+   "page": "FUNC",
+   "value": 86,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    86
+   ]
+  },
+  {
+   "mapKey": "87-FUNC",
+   "name": "Side Light RT Effect",
+   "page": "FUNC",
+   "value": 87,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    87
+   ]
+  },
+  {
+   "mapKey": "88-FUNC",
+   "name": "WIN + SPACEBAR",
+   "page": "FUNC",
+   "value": 88,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    88
+   ]
+  },
+  {
+   "mapKey": "89-FUNC",
+   "name": "LOGO LED ON/OFF",
+   "page": "FUNC",
+   "value": 89,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    89
+   ]
+  },
+  {
+   "mapKey": "90-FUNC",
+   "name": "Dot Matrix Color Toggle",
+   "page": "FUNC",
+   "value": 90,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    90
+   ]
+  },
+  {
+   "mapKey": "91-FUNC",
+   "name": "Light Bar Overlay Mode",
+   "page": "FUNC",
+   "value": 91,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    91
+   ]
+  },
+  {
+   "mapKey": "92-FUNC",
+   "name": "ALT + SPACEBAR",
+   "page": "FUNC",
+   "value": 92,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    92
+   ]
+  },
+  {
+   "mapKey": "93-FUNC",
+   "name": "White Light One-Click",
+   "page": "FUNC",
+   "value": 93,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    93
+   ]
+  },
+  {
+   "mapKey": "94-FUNC",
+   "name": "Screenshot Win+Shift+S",
+   "page": "FUNC",
+   "value": 94,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    94
+   ]
+  },
+  {
+   "mapKey": "95-FUNC",
+   "name": "Toggle APM Counter",
+   "page": "FUNC",
+   "value": 95,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    95
+   ]
+  },
+  {
+   "mapKey": "96-FUNC",
+   "name": "Toggle Extreme Power Save",
+   "page": "FUNC",
+   "value": 96,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    96
+   ]
+  },
+  {
+   "mapKey": "97-FUNC",
+   "name": "One-Click GIF Animation",
+   "page": "FUNC",
+   "value": 97,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    97
+   ]
+  },
+  {
+   "mapKey": "98-FUNC",
+   "name": "Custom Lighting 3",
+   "page": "FUNC",
+   "value": 98,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    98
+   ]
+  },
+  {
+   "mapKey": "99-FUNC",
+   "name": "Custom Lighting Recording",
+   "page": "FUNC",
+   "value": 99,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    99
+   ]
+  },
+  {
+   "mapKey": "100-FUNC",
+   "name": "LOGO Light Toggle",
+   "page": "FUNC",
+   "value": 100,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    100
+   ]
+  },
+  {
+   "mapKey": "101-FUNC",
+   "name": "8K Data Test",
+   "page": "FUNC",
+   "value": 101,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    101
+   ]
+  },
+  {
+   "mapKey": "102-FUNC",
+   "name": "SOCD Toggle",
+   "page": "FUNC",
+   "value": 102,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    102
+   ]
+  },
+  {
+   "mapKey": "103-FUNC",
+   "name": "Lighting Effect Reset",
+   "page": "FUNC",
+   "value": 103,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    103
+   ]
+  },
+  {
+   "mapKey": "104-FUNC",
+   "name": "Main/Side Light Brightness +",
+   "page": "FUNC",
+   "value": 104,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    104
+   ]
+  },
+  {
+   "mapKey": "105-FUNC",
+   "name": "Main/Side Light Brightness -",
+   "page": "FUNC",
+   "value": 105,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    105
+   ]
+  },
+  {
+   "mapKey": "106-FUNC",
+   "name": "Main/Side Light Speed +",
+   "page": "FUNC",
+   "value": 106,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    106
+   ]
+  },
+  {
+   "mapKey": "107-FUNC",
+   "name": "Main/Side Light Speed -",
+   "page": "FUNC",
+   "value": 107,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    107
+   ]
+  },
+  {
+   "mapKey": "108-FUNC",
+   "name": "Frequency Test",
+   "page": "FUNC",
+   "value": 108,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    108
+   ]
+  },
+  {
+   "mapKey": "109-FUNC",
+   "name": "WIN/MAC Toggle",
+   "page": "FUNC",
+   "value": 109,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    109
+   ]
+  },
+  {
+   "mapKey": "110-FUNC",
+   "name": "Side Light Brightness +",
+   "page": "FUNC",
+   "value": 110,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    110
+   ]
+  },
+  {
+   "mapKey": "111-FUNC",
+   "name": "Side Light Brightness -",
+   "page": "FUNC",
+   "value": 111,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    111
+   ]
+  },
+  {
+   "mapKey": "112-FUNC",
+   "name": "HOME->END",
+   "page": "FUNC",
+   "value": 112,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    112
+   ]
+  },
+  {
+   "mapKey": "113-FUNC",
+   "name": "Enter Test Mode",
+   "page": "FUNC",
+   "value": 113,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    113
+   ]
+  },
+  {
+   "mapKey": "114-FUNC",
+   "name": "ALT Swap",
+   "page": "FUNC",
+   "value": 114,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    114
+   ]
+  },
+  {
+   "mapKey": "115-FUNC",
+   "name": "ENT Direction Swap",
+   "page": "FUNC",
+   "value": 115,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    115
+   ]
+  },
+  {
+   "mapKey": "116-FUNC",
+   "name": "WASD to Arrow Keys",
+   "page": "FUNC",
+   "value": 116,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    116
+   ]
+  },
+  {
+   "mapKey": "117-FUNC",
+   "name": "DELETE->HOME",
+   "page": "FUNC",
+   "value": 117,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    117
+   ]
+  },
+  {
+   "mapKey": "118-FUNC",
+   "name": "END->INSERT",
+   "page": "FUNC",
+   "value": 118,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    118
+   ]
+  },
+  {
+   "mapKey": "119-FUNC",
+   "name": "PAGEUP->PRINT",
+   "page": "FUNC",
+   "value": 119,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    119
+   ]
+  },
+  {
+   "mapKey": "120-FUNC",
+   "name": "PAGEDOWN->PAUSE",
+   "page": "FUNC",
+   "value": 120,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    120
+   ]
+  },
+  {
+   "mapKey": "121-FUNC",
+   "name": "Game Mode Toggle",
+   "page": "FUNC",
+   "value": 121,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    121
+   ]
+  },
+  {
+   "mapKey": "122-FUNC",
+   "name": "Lightbox Brightness +",
+   "page": "FUNC",
+   "value": 122,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    122
+   ]
+  },
+  {
+   "mapKey": "123-FUNC",
+   "name": "Lightbox Brightness -",
+   "page": "FUNC",
+   "value": 123,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    123
+   ]
+  },
+  {
+   "mapKey": "124-FUNC",
+   "name": "Lightbox Speed +",
+   "page": "FUNC",
+   "value": 124,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    124
+   ]
+  },
+  {
+   "mapKey": "125-FUNC",
+   "name": "Lightbox Speed -",
+   "page": "FUNC",
+   "value": 125,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    125
+   ]
+  },
+  {
+   "mapKey": "126-FUNC",
+   "name": "LOGO Light Effect Toggle",
+   "page": "FUNC",
+   "value": 126,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    126
+   ]
+  },
+  {
+   "mapKey": "127-FUNC",
+   "name": "Lightbox Diffusion Color Toggle",
+   "page": "FUNC",
+   "value": 127,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    127
+   ]
+  },
+  {
+   "mapKey": "128-FUNC",
+   "name": "Lightbox Effect Toggle",
+   "page": "FUNC",
+   "value": 128,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    128
+   ]
+  },
+  {
+   "mapKey": "129-FUNC",
+   "name": "Lightbox Color Toggle",
+   "page": "FUNC",
+   "value": 129,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    129
+   ]
+  },
+  {
+   "mapKey": "130-FUNC",
+   "name": "Pickup Light Brightness +",
+   "page": "FUNC",
+   "value": 130,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    130
+   ]
+  },
+  {
+   "mapKey": "131-FUNC",
+   "name": "Pickup Light Brightness -",
+   "page": "FUNC",
+   "value": 131,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    131
+   ]
+  },
+  {
+   "mapKey": "132-FUNC",
+   "name": "Pickup Light Background Toggle",
+   "page": "FUNC",
+   "value": 132,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    132
+   ]
+  },
+  {
+   "mapKey": "133-FUNC",
+   "name": "Pickup Light Direction Toggle",
+   "page": "FUNC",
+   "value": 133,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    133
+   ]
+  },
+  {
+   "mapKey": "134-FUNC",
+   "name": "WIN+。",
+   "page": "FUNC",
+   "value": 134,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    134
+   ]
+  },
+  {
+   "mapKey": "135-FUNC",
+   "name": "CTRL+WIN+SPACEBAR",
+   "page": "FUNC",
+   "value": 135,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    135
+   ]
+  },
+  {
+   "mapKey": "136-FUNC",
+   "name": "WIN+SHIFT+3",
+   "page": "FUNC",
+   "value": 136,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    136
+   ]
+  },
+  {
+   "mapKey": "137-FUNC",
+   "name": "WIN+SHIFT+4",
+   "page": "FUNC",
+   "value": 137,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    137
+   ]
+  },
+  {
+   "mapKey": "138-FUNC",
+   "name": "Turn On Keys Below Screen",
+   "page": "FUNC",
+   "value": 138,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    138
+   ]
+  },
+  {
+   "mapKey": "139-FUNC",
+   "name": "Red Constant On",
+   "page": "FUNC",
+   "value": 139,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    139
+   ]
+  },
+  {
+   "mapKey": "140-FUNC",
+   "name": "Green Constant On",
+   "page": "FUNC",
+   "value": 140,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    140
+   ]
+  },
+  {
+   "mapKey": "141-FUNC",
+   "name": "Blue Constant On",
+   "page": "FUNC",
+   "value": 141,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    141
+   ]
+  },
+  {
+   "mapKey": "142-FUNC",
+   "name": "Custom Lighting 4",
+   "page": "FUNC",
+   "value": 142,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    142
+   ]
+  },
+  {
+   "mapKey": "143-FUNC",
+   "name": "Custom Lighting 5",
+   "page": "FUNC",
+   "value": 143,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    143
+   ]
+  },
+  {
+   "mapKey": "144-FUNC",
+   "name": "Lock All Keys",
+   "page": "FUNC",
+   "value": 144,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    144
+   ]
+  },
+  {
+   "mapKey": "145-FUNC",
+   "name": "WIN+I",
+   "page": "FUNC",
+   "value": 145,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    145
+   ]
+  },
+  {
+   "mapKey": "146-FUNC",
+   "name": "WIN+L",
+   "page": "FUNC",
+   "value": 146,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    146
+   ]
+  },
+  {
+   "mapKey": "147-FUNC",
+   "name": "Side Light Speed +",
+   "page": "FUNC",
+   "value": 147,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    147
+   ]
+  },
+  {
+   "mapKey": "148-FUNC",
+   "name": "Side Light Speed -",
+   "page": "FUNC",
+   "value": 148,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    148
+   ]
+  },
+  {
+   "mapKey": "149-FUNC",
+   "name": "Side Light Direction",
+   "page": "FUNC",
+   "value": 149,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    149
+   ]
+  },
+  {
+   "mapKey": "150-FUNC",
+   "name": "Polling Rate Switch",
+   "page": "FUNC",
+   "value": 150,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    150
+   ]
+  },
+  {
+   "mapKey": "151-FUNC",
+   "name": "PAGEUP->INSERT",
+   "page": "FUNC",
+   "value": 151,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    151
+   ]
+  },
+  {
+   "mapKey": "152-FUNC",
+   "name": "PAGEDOWN->END",
+   "page": "FUNC",
+   "value": 152,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    152
+   ]
+  },
+  {
+   "mapKey": "153-FUNC",
+   "name": "Manual Calibration",
+   "page": "FUNC",
+   "value": 153,
+   "browserCode": "",
+   "uiGroup": null,
+   "bytes": [
+    13,
+    0,
+    0,
+    153
+   ]
+  }
+ ]
+}

@@ -1,0 +1,6 @@
+# Gives the logged-in desktop user access to the AULA F108 Pro V2 HID
+# interfaces, so the configurator runs without root.
+# 2.4G dongle
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="0c45", ATTRS{idProduct}=="fefc", TAG+="uaccess"
+# Wired USB
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="38a6", ATTRS{idProduct}=="2739", TAG+="uaccess"

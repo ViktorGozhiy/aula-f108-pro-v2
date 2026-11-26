@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=AULA F108 Pro V2
+GenericName=Keyboard configuration
+Comment=Backlight and settings of the AULA F108 Pro V2 keyboard
+Exec=@REPO@/aula-f108
+Icon=input-keyboard
+Terminal=false
+Categories=Settings;HardwareSettings;Qt;

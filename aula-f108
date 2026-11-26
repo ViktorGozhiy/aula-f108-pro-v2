@@ -1,0 +1,4 @@
+#!/bin/sh
+# Starts the configurator from the repository with the system Python 3 and its PyQt5.
+here=$(dirname "$(readlink -f "$0")")
+PYTHONPATH="$here/src" exec /usr/bin/python3 -m aula_f108 "$@"
