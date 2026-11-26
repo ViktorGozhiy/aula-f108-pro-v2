@@ -4,6 +4,7 @@ Each writable block is written with the value read, then with a changed value, t
 values again, and each write is checked by reading back. The polling rate, the factory reset, the
 Win/Mac mode and the dot matrix are never written, and no animation is uploaded.
 """
+
 import pytest
 
 from aula_f108.blocks.macros import INDEX_SIZE, MacroAction

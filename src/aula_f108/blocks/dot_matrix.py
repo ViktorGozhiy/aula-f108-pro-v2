@@ -5,6 +5,7 @@ zeros, as the vendor does: character mode (mode 0) sets only the two colours, a 
 3 rows) sets only the mode. The read is unconfirmed: on firmware V1.33 it returned all zeros, so the application
 does not use it to show what the display shows.
 """
+
 from dataclasses import dataclass
 
 from aula_f108.blocks import Block, check_colour, check_fields, check_range, check_size

@@ -1,4 +1,5 @@
 """Page "Device": model, connection, firmware, battery, the configuration file and the factory reset."""
+
 from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtWidgets import QFileDialog, QFormLayout, QHBoxLayout, QLabel, QMessageBox, QPushButton
 
@@ -8,8 +9,7 @@ MODEL = "AULA F108 Pro V2"
 CONNECTION_NAMES = {"cable": "Cable (USB)", "dongle": "2.4G (dongle)"}
 RESET_TITLE = "Factory reset"
 RESET_QUESTION = (
-    "All keyboard settings return to the factory defaults: backlight, key assignments, macros and settings. "
-    "Continue?"
+    "All keyboard settings return to the factory defaults: backlight, key assignments, macros and settings. Continue?"
 )
 PROFILE_NOTE = (
     "The file holds the settings, the backlight, the side lighting, the key colours, the key assignments of both "
@@ -22,8 +22,7 @@ PROFILE_RUNNING = "Running…"
 
 def ask_export_path(parent) -> str:
     """Ask where to save the configuration. Returns an empty string when the user cancels."""
-    path, _selected_filter = QFileDialog.getSaveFileName(
-        parent, "Save settings", "aula-f108.json", PROFILE_FILTER)
+    path, _selected_filter = QFileDialog.getSaveFileName(parent, "Save settings", "aula-f108.json", PROFILE_FILTER)
     return path
 
 
@@ -112,7 +111,9 @@ class DevicePage(Page):
 
     def _confirm_reset(self) -> None:
         answer = QMessageBox.question(
-            self, RESET_TITLE, RESET_QUESTION,
+            self,
+            RESET_TITLE,
+            RESET_QUESTION,
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
             QMessageBox.StandardButton.No,
         )

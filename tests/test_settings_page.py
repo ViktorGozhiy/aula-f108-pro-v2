@@ -70,10 +70,13 @@ def test_controls_request_their_field(page):
     ]
 
 
-@pytest.mark.parametrize(("spin_box", "typed", "change"), [
-    ("sleep", "25", {"sleep_minutes": 25}),
-    ("debounce", "5", {"debounce": 5}),
-])
+@pytest.mark.parametrize(
+    ("spin_box", "typed", "change"),
+    [
+        ("sleep", "25", {"sleep_minutes": 25}),
+        ("debounce", "5", {"debounce": 5}),
+    ],
+)
 def test_typed_value_is_requested_once_when_editing_finishes(qtbot, page, spin_box, typed, change):
     field = getattr(page, spin_box).lineEdit()
     field.selectAll()

@@ -78,7 +78,7 @@ def test_key_animation_sets_the_animation_effect_first():
     rig.step()
     assert write_commands(sim) == [0x23]
     assert led_effect.decode(sim.writes[0][2]) == led_effect.LedEffect(0xFF, (255, 0, 0), False, 5, 0, 0)
-    assert bulk.uploaded(0x42)[:len(PAYLOAD)] == PAYLOAD
+    assert bulk.uploaded(0x42)[: len(PAYLOAD)] == PAYLOAD
     assert [event[0] for event in rig.events] == ["written", "progress", "upload_finished"]
     assert rig.of_kind("upload_finished") == [(KEY_ANIMATION, UPLOAD_DONE)]
 
@@ -110,7 +110,7 @@ def test_bulk_interface_that_cannot_be_opened_is_logged_and_the_command_interfac
     assert "bulk interface /dev/sim-cable_bulk not opened" in caplog.text
     rig.worker.request_upload(DOT_MATRIX_ANIMATION, PAYLOAD)
     rig.step()
-    assert sim.uploaded(0x41)[:len(PAYLOAD)] == PAYLOAD
+    assert sim.uploaded(0x41)[: len(PAYLOAD)] == PAYLOAD
 
 
 def test_busy_bulk_interface_is_logged_and_the_command_interface_used(caplog):
@@ -122,7 +122,7 @@ def test_busy_bulk_interface_is_logged_and_the_command_interface_used(caplog):
     assert "bulk interface /dev/sim-cable_bulk not opened" in caplog.text
     rig.worker.request_upload(DOT_MATRIX_ANIMATION, PAYLOAD)
     rig.step()
-    assert sim.uploaded(0x41)[:len(PAYLOAD)] == PAYLOAD
+    assert sim.uploaded(0x41)[: len(PAYLOAD)] == PAYLOAD
 
 
 def test_reconnect_on_the_same_cable_keeps_the_open_bulk_interface():
@@ -225,7 +225,7 @@ def test_cancel_of_one_kind_leaves_the_queued_upload_of_the_other_kind():
     rig.step(2)
     assert rig.of_kind("upload_finished") == [(DOT_MATRIX_ANIMATION, UPLOAD_CANCELLED), (KEY_ANIMATION, UPLOAD_DONE)]
     assert bulk.uploaded(0x41) == b""
-    assert bulk.uploaded(0x42)[:len(PAYLOAD)] == PAYLOAD
+    assert bulk.uploaded(0x42)[: len(PAYLOAD)] == PAYLOAD
 
 
 def test_upload_of_the_other_kind_keeps_a_cancel():

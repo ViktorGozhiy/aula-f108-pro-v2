@@ -28,7 +28,7 @@ def test_decode_rejects_a_wrong_size():
 def test_encode_without_changes_numbers_every_entry():
     out = key_colours.encode_into(READ, {})
     assert [out[index * 4] for index in range(128)] == list(range(128))
-    assert all(out[index * 4 + 1:index * 4 + 4] == b"\x00\x00\x00" for index in range(128))
+    assert all(out[index * 4 + 1 : index * 4 + 4] == b"\x00\x00\x00" for index in range(128))
 
 
 def test_encode_writes_only_the_changed_colours():

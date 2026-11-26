@@ -1,7 +1,16 @@
 """The editor of one key action, with a group for each kind of action, and the key picker it shares with the macros."""
+
 from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtWidgets import (
-    QComboBox, QFormLayout, QHBoxLayout, QLabel, QPushButton, QSpinBox, QStackedWidget, QVBoxLayout, QWidget,
+    QComboBox,
+    QFormLayout,
+    QHBoxLayout,
+    QLabel,
+    QPushButton,
+    QSpinBox,
+    QStackedWidget,
+    QVBoxLayout,
+    QWidget,
 )
 
 from aula_f108.action_names import MODIFIER_NAMES, action_label, names
@@ -38,8 +47,16 @@ GROUPS = {
     "raw": "Other",
 }
 GROUP_OF = {
-    Default: "default", KeyboardKey: "keyboard", Consumer: "media", Mouse: "mouse", Macro: "macro", Combo: "combo",
-    TapHold: "tap_hold", Toggle: "toggle", Function: "function", Raw: "raw",
+    Default: "default",
+    KeyboardKey: "keyboard",
+    Consumer: "media",
+    Mouse: "mouse",
+    Macro: "macro",
+    Combo: "combo",
+    TapHold: "tap_hold",
+    Toggle: "toggle",
+    Function: "function",
+    Raw: "raw",
 }
 MACRO_MODE_NAMES = {0: "Once", 1: "A set number of times", 2: "Until the next press"}
 NO_MODIFIER = 0
@@ -49,8 +66,10 @@ COMBO_KEY_IS_MODIFIER = "The combination key cannot be a modifier: choose anothe
 
 
 def raw_text(action: Raw) -> str:
-    return (f"The program does not support the action {action_label(action)}. It can be replaced with another action; "
-            "until it is replaced, it is written back unchanged.")
+    return (
+        f"The program does not support the action {action_label(action)}. It can be replaced with another action; "
+        "until it is replaced, it is written back unchanged."
+    )
 
 
 def mouse_code(kind: int, value: int) -> int:
@@ -127,10 +146,8 @@ class ActionEditor(QWidget):
             "media": [("Action", self.media)],
             "mouse": [("Action", self.mouse)],
             "macro": [("Macro", self.macro_slot), ("Run", self.macro_mode), ("Repeat count", self.macro_count)],
-            "combo": [("Modifier", self.combo_first), ("Second modifier", self.combo_second),
-                      ("Key", self.combo_key)],
-            "tap_hold": [("On tap", self.tap_key), ("On hold", self.hold_key),
-                         ("Hold longer than", self.hold_time)],
+            "combo": [("Modifier", self.combo_first), ("Second modifier", self.combo_second), ("Key", self.combo_key)],
+            "tap_hold": [("On tap", self.tap_key), ("On hold", self.hold_key), ("Hold longer than", self.hold_time)],
             "toggle": [("Key", self.toggle_key)],
             "function": [("Function", self.function)],
             "raw": [(None, self.raw_text)],

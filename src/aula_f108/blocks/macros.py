@@ -13,6 +13,7 @@ The size of the macro memory is not known: the vendor writer checks no limit, an
 macroSpaceSize 512. So a write whose bodies take more than MACRO_SPACE = 512 bytes is refused; the index is a fixed
 area in front of them and is not counted.
 """
+
 from dataclasses import dataclass
 
 from aula_f108.blocks import Block, check_fields, check_range
@@ -35,8 +36,8 @@ FIELDS = frozenset({"macros"})
 
 @dataclass(frozen=True)
 class MacroAction:
-    delay: int   # milliseconds
-    code: int    # HID usage of a keyboard action, button mask of a mouse action
+    delay: int  # milliseconds
+    code: int  # HID usage of a keyboard action, button mask of a mouse action
     press: bool  # False for a release
     kind: int = KEYBOARD_ACTION
 
@@ -78,7 +79,7 @@ def assemble(bodies) -> bytes:
     for slot, body in enumerate(bodies):
         if body:
             start = slot * OFFSET_SIZE
-            index[start:start + OFFSET_SIZE] = (INDEX_SIZE + len(memory)).to_bytes(OFFSET_SIZE, "little")
+            index[start : start + OFFSET_SIZE] = (INDEX_SIZE + len(memory)).to_bytes(OFFSET_SIZE, "little")
             memory += body
     return bytes(index + memory)
 
@@ -102,7 +103,7 @@ def encode_into(raw: bytes, changes: dict) -> bytes:
             bodies.append(encode_body(actions) if actions else None)
         elif current.macros[slot]:
             offset = offsets[slot]
-            bodies.append(bytes(raw[offset:offset + _body_span(raw, offset)]))
+            bodies.append(bytes(raw[offset : offset + _body_span(raw, offset)]))
         else:
             bodies.append(None)
     out = assemble(bodies)
@@ -144,7 +145,7 @@ def _check_index(raw: bytes) -> None:
 
 
 def _offsets(raw: bytes) -> list:
-    return [int.from_bytes(raw[slot * OFFSET_SIZE:(slot + 1) * OFFSET_SIZE], "little") for slot in range(SLOTS)]
+    return [int.from_bytes(raw[slot * OFFSET_SIZE : (slot + 1) * OFFSET_SIZE], "little") for slot in range(SLOTS)]
 
 
 def _body_span(raw: bytes, offset: int) -> int:
@@ -158,8 +159,10 @@ def _decode_body(raw: bytes, offset: int) -> tuple:
     end = offset + _body_span(raw, offset)
     if end > len(raw):
         raise ValueError(f"the macro body at address {offset} ends past the block")
-    return tuple(_decode_action(raw[position:position + ACTION_SIZE])
-                 for position in range(offset + BODY_HEADER_SIZE, end, ACTION_SIZE))
+    return tuple(
+        _decode_action(raw[position : position + ACTION_SIZE])
+        for position in range(offset + BODY_HEADER_SIZE, end, ACTION_SIZE)
+    )
 
 
 def _decode_action(entry: bytes) -> MacroAction:

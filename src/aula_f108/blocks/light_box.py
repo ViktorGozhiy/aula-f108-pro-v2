@@ -2,6 +2,7 @@
 
 A read always reports red and colourful 1, so the colour the keyboard shows cannot be read back.
 """
+
 from dataclasses import dataclass
 
 from aula_f108.blocks import Block, check_colour, check_fields, check_range, check_size

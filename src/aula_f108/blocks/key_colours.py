@@ -4,6 +4,7 @@ The block holds 128 entries of [key index, R, G, B]; entry i belongs to key inde
 as the index byte when no colours are stored, so the writer puts i into the first byte of every entry i, as the
 vendor does.
 """
+
 from dataclasses import dataclass
 
 from aula_f108.blocks import Block, check_colour, check_fields, check_range, check_size
@@ -21,9 +22,9 @@ class KeyColours:
 
 def decode(raw: bytes) -> KeyColours:
     check_size("key colours", raw, SIZE)
-    return KeyColours(tuple(
-        (raw[offset + 1], raw[offset + 2], raw[offset + 3]) for offset in range(0, SIZE, ENTRY_SIZE)
-    ))
+    return KeyColours(
+        tuple((raw[offset + 1], raw[offset + 2], raw[offset + 3]) for offset in range(0, SIZE, ENTRY_SIZE))
+    )
 
 
 def encode_into(raw: bytes, changes: dict) -> bytes:
@@ -35,7 +36,7 @@ def encode_into(raw: bytes, changes: dict) -> bytes:
         check_range("key index", index, 0, ENTRIES - 1)
         check_colour("colour", colour)
         offset = index * ENTRY_SIZE
-        out[offset + 1:offset + 4] = bytes(colour)
+        out[offset + 1 : offset + 4] = bytes(colour)
     for index in range(ENTRIES):
         out[index * ENTRY_SIZE] = index
     return bytes(out)

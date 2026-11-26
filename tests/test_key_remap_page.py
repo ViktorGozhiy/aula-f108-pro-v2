@@ -176,7 +176,8 @@ def test_apply_writes_each_layer_with_edits(read_page):
     assign(read_page, F1, KeyboardKey(A))
     read_page.apply.click()
     assert read_page.requests[1:] == [
-        (BASE, {"actions": {F1: KeyboardKey(A)}}), (FN, {"actions": {F1: KeyboardKey(B)}}),
+        (BASE, {"actions": {F1: KeyboardKey(A)}}),
+        (FN, {"actions": {F1: KeyboardKey(B)}}),
     ]
 
 

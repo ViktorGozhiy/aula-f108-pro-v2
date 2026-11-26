@@ -1,3 +1,6 @@
+import contextlib
+from pathlib import Path
+
 import pytest
 from PIL import Image
 
@@ -96,17 +99,15 @@ def test_load_gif_refuses_a_file_that_is_no_image(tmp_path):
 
 
 def test_load_gif_refuses_a_truncated_file_with_an_os_error(tmp_path):
-    data = open(three_frame_gif(tmp_path / "a.gif"), "rb").read()
+    data = Path(three_frame_gif(tmp_path / "a.gif")).read_bytes()
     for length in range(1, len(data)):
         (tmp_path / "cut.gif").write_bytes(data[:length])
-        try:
+        with contextlib.suppress(OSError):  # the only error a damaged file may raise
             load_gif(str(tmp_path / "cut.gif"), 10)
-        except OSError:
-            pass  # the only error a damaged file may raise
 
 
 def test_load_gif_reports_a_file_cut_inside_a_frame_as_an_os_error(tmp_path):
-    data = open(three_frame_gif(tmp_path / "a.gif"), "rb").read()
+    data = Path(three_frame_gif(tmp_path / "a.gif")).read_bytes()
     (tmp_path / "cut.gif").write_bytes(data[:111])
     with pytest.raises(OSError):
         load_gif(str(tmp_path / "cut.gif"), 10)
@@ -139,10 +140,10 @@ def test_key_frames_sample_each_key_centre_across_the_width():
     image.putpixel((0, 0), RED)
     image.putpixel((1, 0), BLUE)
     frame = key_frames([image], keys)[0]
-    by_index = dict(zip((key.index for key in keys), frame))
+    by_index = dict(zip((key.index for key in keys), frame, strict=True))
     assert len(frame) == 108
-    assert by_index[0] == RED      # Esc, left edge
-    assert by_index[110] == BLUE   # keypad +, right edge
+    assert by_index[0] == RED  # Esc, left edge
+    assert by_index[110] == BLUE  # keypad +, right edge
 
 
 def test_key_frames_sample_each_key_centre_down_the_height():
@@ -150,8 +151,8 @@ def test_key_frames_sample_each_key_centre_down_the_height():
     image = Image.new("RGB", (1, 2))
     image.putpixel((0, 0), RED)
     image.putpixel((0, 1), BLUE)
-    by_index = dict(zip((key.index for key in keys), key_frames([image], keys)[0]))
-    assert by_index[0] == RED    # Esc, top row
+    by_index = dict(zip((key.index for key in keys), key_frames([image], keys)[0], strict=True))
+    assert by_index[0] == RED  # Esc, top row
     assert by_index[83] == BLUE  # Space, bottom row
 
 

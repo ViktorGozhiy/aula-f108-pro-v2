@@ -81,5 +81,5 @@ def test_keyboard_writes_a_changed_table_on_the_dongle():
     written = keyboard.read_with_changes(FN_BLOCK, {"actions": {SCROLL_LOCK: KeyboardKey(0x68)}})
     keyboard.write(FN_BLOCK, written)
     assert bytes(sim.blocks[FN]) == written
-    assert written[SCROLL_LOCK * 4:SCROLL_LOCK * 4 + 4] == bytes([2, 0, 0x68, 0])
+    assert written[SCROLL_LOCK * 4 : SCROLL_LOCK * 4 + 4] == bytes([2, 0, 0x68, 0])
     assert sim.sent_commands() == [0x16] * 22 + [0x26] * 22  # 21 packets of 24 bytes and one of 8

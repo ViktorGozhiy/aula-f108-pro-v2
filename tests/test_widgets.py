@@ -7,7 +7,7 @@ from aula_f108.ui.widgets import is_light, stored_colour
 def test_is_light_boundary():
     # Brightness is red * 299 + green * 587 + blue * 114; a colour is light only above 128000.
     assert not is_light((1, 189, 147))  # exactly 128000
-    assert is_light((2, 205, 62))       # 128001
+    assert is_light((2, 205, 62))  # 128001
 
 
 def test_white_is_light_and_black_is_not():

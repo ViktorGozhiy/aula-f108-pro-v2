@@ -1,6 +1,7 @@
 """Configuration blocks of the keyboard: decode the raw bytes and write changed fields onto a fresh read."""
+
+from collections.abc import Callable
 from dataclasses import dataclass
-from typing import Callable
 
 
 @dataclass(frozen=True)

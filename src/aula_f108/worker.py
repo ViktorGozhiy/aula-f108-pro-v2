@@ -1,6 +1,7 @@
 """Device I/O in one thread: connection by probing, block reads, merged writes and notifications."""
-import logging
+
 import itertools
+import logging
 import threading
 import time
 from dataclasses import dataclass
@@ -18,7 +19,8 @@ log = logging.getLogger(__name__)
 PROBE_INTERVAL = 3.0
 BATTERY_INTERVAL = 30.0
 IDLE_WAIT = 0.05
-ERROR_PAUSE = 1.0  # seconds the worker thread waits after an unexpected exception, so a repeated one does not flood the log
+# Seconds the worker thread waits after an unexpected exception, so a repeated one does not flood the log.
+ERROR_PAUSE = 1.0
 
 LINK_LOST = b"\x55\xfc\x04"
 RESET = b"\x55\xfc\x05"
@@ -48,9 +50,9 @@ MODE_BLOCKS = ("settings", *LAYERS)
 
 @dataclass(frozen=True)
 class ConnectionState:
-    status: str                    # "connected", "not_connected" or "busy"
+    status: str  # "connected", "not_connected" or "busy"
     connection: str | None = None  # "cable" or "dongle" while connected
-    reason: str = ""               # why no keyboard is connected, shown to the user
+    reason: str = ""  # why no keyboard is connected, shown to the user
 
 
 @dataclass
@@ -92,18 +94,24 @@ UPLOADS = {
 class DeviceWorker(QObject):
     """Owns the open command interface. The UI calls the request methods; results come back as signals."""
 
-    state_changed = pyqtSignal(object)       # ConnectionState
-    block_read = pyqtSignal(str, object)     # block name, decoded value
-    block_failed = pyqtSignal(str, str)      # block name, message: the block could not be read
+    state_changed = pyqtSignal(object)  # ConnectionState
+    block_read = pyqtSignal(str, object)  # block name, decoded value
+    block_failed = pyqtSignal(str, str)  # block name, message: the block could not be read
     block_written = pyqtSignal(str, object)  # block name, decoded value as written
-    write_failed = pyqtSignal(str, str)      # block name or "factory_reset", message
+    write_failed = pyqtSignal(str, str)  # block name or "factory_reset", message
     batch_update_finished = pyqtSignal(int, str, bool, str)  # batch id, block, written, message of each batch request
     upload_progress = pyqtSignal(str, int, int)  # upload kind, chunks sent, chunk count
-    upload_finished = pyqtSignal(str, str)       # upload kind, UPLOAD_DONE, UPLOAD_CANCELLED or UPLOAD_FAILED
-    factory_reset_sent = pyqtSignal()        # the factory reset was sent: unapplied edits of the pages are void
+    upload_finished = pyqtSignal(str, str)  # upload kind, UPLOAD_DONE, UPLOAD_CANCELLED or UPLOAD_FAILED
+    factory_reset_sent = pyqtSignal()  # the factory reset was sent: unapplied edits of the pages are void
 
-    def __init__(self, find_interfaces=find_command_interfaces, open_device=HidrawDevice,
-                 time_scale: float = 1.0, clock=time.monotonic, idle_wait: float = IDLE_WAIT):
+    def __init__(
+        self,
+        find_interfaces=find_command_interfaces,
+        open_device=HidrawDevice,
+        time_scale: float = 1.0,
+        clock=time.monotonic,
+        idle_wait: float = IDLE_WAIT,
+    ):
         super().__init__()
         self._find_interfaces = find_interfaces
         self._open_device = open_device
@@ -120,13 +128,13 @@ class DeviceWorker(QObject):
         self._device = None
         self._path = None
         self._protocol = None
-        self._bulk_device = None   # the cable's separate bulk upload interface, while it is open
+        self._bulk_device = None  # the cable's separate bulk upload interface, while it is open
         self._bulk_path = None
-        self._bulk = None          # Protocol over the bulk interface
+        self._bulk = None  # Protocol over the bulk interface
         # One cancel flag per upload kind, so a cancel on one page never stops or is cleared by the other page.
         self._cancel_upload = {kind: threading.Event() for kind in UPLOADS}
-        self._keyboard = None      # set only while the keyboard answers
-        self._connection = None    # "cable" or "dongle", set only while the keyboard answers
+        self._keyboard = None  # set only while the keyboard answers
+        self._connection = None  # "cable" or "dongle", set only while the keyboard answers
         self._reason = NOT_FOUND
         self._state = None
         self._next_probe = 0.0
@@ -160,7 +168,8 @@ class DeviceWorker(QObject):
         with self._condition:
             batch = next(self._batch_ids)
             self._requests.extend(
-                _Update(block, dict(changes), ordered=True, batch=batch) for block, changes in updates)
+                _Update(block, dict(changes), ordered=True, batch=batch) for block, changes in updates
+            )
             self._condition.notify_all()
         return batch
 
@@ -279,8 +288,9 @@ class DeviceWorker(QObject):
         try:
             device = self._open_device(interface.bulk_path, interface.bulk_report_size)
         except (DeviceBusy, OSError) as error:
-            log.warning("bulk interface %s not opened, uploads use the command interface: %s",
-                        interface.bulk_path, error)
+            log.warning(
+                "bulk interface %s not opened, uploads use the command interface: %s", interface.bulk_path, error
+            )
             return
         self._bulk_device, self._bulk_path = device, interface.bulk_path
         self._bulk = Protocol(device, self._note, self._time_scale)
@@ -360,7 +370,8 @@ class DeviceWorker(QObject):
         protocol = self._bulk if self._bulk is not None else self._protocol
         try:
             sent = protocol.upload(
-                upload.cmd, payload,
+                upload.cmd,
+                payload,
                 progress=lambda done, total: self.upload_progress.emit(kind, done, total),
                 cancelled=cancel.is_set,
             )

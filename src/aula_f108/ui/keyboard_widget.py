@@ -1,4 +1,5 @@
 """The keyboard picture: the 108 keys drawn from the layout coordinates, with labels, colours and edit marks."""
+
 from PyQt5.QtCore import QPointF, QRectF, Qt
 from PyQt5.QtGui import QColor, QFont, QPainter, QPalette, QPen, QPolygonF
 from PyQt5.QtWidgets import QSizePolicy
@@ -6,11 +7,11 @@ from PyQt5.QtWidgets import QSizePolicy
 from aula_f108.layout import Arrow, bounds
 from aula_f108.ui.widgets import TouchArea, is_light
 
-MARGIN = 4        # pixels around the keys
-LABEL_SIZE = 13   # label height in layout units
+MARGIN = 4  # pixels around the keys
+LABEL_SIZE = 13  # label height in layout units
 ACTION_LABEL_SIZE = 9  # height of a label given with set_labels: action names are longer than key names
-SELECTION_WIDTH = 4    # width of the outline of the selected key, in layout units
-CORNER = 4        # corner radius in layout units
+SELECTION_WIDTH = 4  # width of the outline of the selected key, in layout units
+CORNER = 4  # corner radius in layout units
 MARK_SIZE = 0.24  # diameter of the mark of an edited key, as a part of the key height
 ARROW_SIZE = 0.4  # side of the square around an arrow, as a part of the shorter key side
 # The corners of the arrow in a unit square around the origin.
@@ -77,8 +78,9 @@ class KeyboardWidget(TouchArea):
     def key_rect(self, index: int) -> QRectF:
         key = self._by_index[index]
         scale, left, top = self._transform()
-        return QRectF(left + (key.x - self._left) * scale, top + (key.y - self._top) * scale,
-                      key.w * scale, key.h * scale)
+        return QRectF(
+            left + (key.x - self._left) * scale, top + (key.y - self._top) * scale, key.w * scale, key.h * scale
+        )
 
     def mark_rect(self, index: int) -> QRectF:
         rect = self.key_rect(index)
@@ -89,8 +91,12 @@ class KeyboardWidget(TouchArea):
         rect = self.key_rect(index)
         size = min(rect.width(), rect.height()) * ARROW_SIZE
         centre = rect.center()
-        return QPolygonF([QPointF(centre.x() + x * size, centre.y() + y * size)
-                          for x, y in ARROW_CORNERS[self._by_index[index].arrow]])
+        return QPolygonF(
+            [
+                QPointF(centre.x() + x * size, centre.y() + y * size)
+                for x, y in ARROW_CORNERS[self._by_index[index].arrow]
+            ]
+        )
 
     def item_at(self, point) -> int | None:
         for key in self.keys:

@@ -1,4 +1,5 @@
 """Access to the captured data in tests/fixtures."""
+
 from pathlib import Path
 
 FIXTURES = Path(__file__).parent / "fixtures"

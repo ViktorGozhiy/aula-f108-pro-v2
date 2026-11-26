@@ -1,7 +1,9 @@
 """Packet framing of the hfd protocol: headers, chunked transfers, reply matching and resends."""
+
 import math
 import time
-from typing import Callable, Protocol as DeviceProtocol
+from collections.abc import Callable
+from typing import Protocol as DeviceProtocol
 
 HEADER_SIZE = 8
 RESENDS = 3
@@ -9,11 +11,29 @@ SHORT_TIMEOUT = 0.5
 LONG_TIMEOUT = 2.0
 LONG_TIMEOUT_COMMANDS = frozenset({0x11, 0x21, 0x25, 0x2A, 0x3D})
 # Every command the application sends through the general path. Factory reset has its own method.
-ALLOWED_COMMANDS = frozenset({
-    0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x1B,
-    0x21, 0x22, 0x23, 0x24, 0x25, 0x26, 0x2A, 0x2B,
-    0x3D, 0x41, 0x42,
-})
+ALLOWED_COMMANDS = frozenset(
+    {
+        0x10,
+        0x11,
+        0x12,
+        0x13,
+        0x14,
+        0x15,
+        0x16,
+        0x1B,
+        0x21,
+        0x22,
+        0x23,
+        0x24,
+        0x25,
+        0x26,
+        0x2A,
+        0x2B,
+        0x3D,
+        0x41,
+        0x42,
+    }
+)
 BULK_COMMANDS = frozenset({0x41, 0x42})
 FACTORY_RESET = 0x0F
 FACTORY_RESET_ALL = 0xFF
@@ -102,18 +122,23 @@ class Protocol:
             reply = self._exchange(self._packet(standard_header(cmd, length, addr + offset, last)), cmd)
             if len(reply) < HEADER_SIZE + length:
                 raise TransferError(f"short reply to command 0x{cmd:02X}: {len(reply)} bytes")
-            data += reply[HEADER_SIZE:HEADER_SIZE + length]
+            data += reply[HEADER_SIZE : HEADER_SIZE + length]
         return bytes(data)
 
     def write_block(self, cmd: int, data: bytes, addr: int = 0, last_flag: bool = True) -> None:
         check_allowed(cmd)
         for offset in range(0, len(data), self.data_size):
-            piece = data[offset:offset + self.data_size]
+            piece = data[offset : offset + self.data_size]
             last = last_flag and offset + len(piece) == len(data)
             self._exchange(self._packet(standard_header(cmd, len(piece), addr + offset, last), piece), cmd)
 
-    def upload(self, cmd: int, payload: bytes, progress: Callable[[int, int], None] | None = None,
-               cancelled: Callable[[], bool] | None = None) -> bool:
+    def upload(
+        self,
+        cmd: int,
+        payload: bytes,
+        progress: Callable[[int, int], None] | None = None,
+        cancelled: Callable[[], bool] | None = None,
+    ) -> bool:
         """Send a bulk upload (0x41, 0x42) in chunks of `data_size` bytes, each zero-padded, waiting for each reply.
 
         `progress(sent, total)` is called after each chunk. `cancelled()` is asked before each chunk; when it returns
@@ -126,7 +151,7 @@ class Protocol:
         for chunk in range(total):
             if cancelled is not None and cancelled():
                 return False
-            piece = bytes(payload[chunk * size:(chunk + 1) * size]).ljust(size, b"\x00")
+            piece = bytes(payload[chunk * size : (chunk + 1) * size]).ljust(size, b"\x00")
             self._exchange(self._packet(bulk_header(cmd, chunk, len(payload), size), piece), cmd)
             if progress is not None:
                 progress(chunk + 1, total)

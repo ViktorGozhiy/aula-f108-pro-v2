@@ -1,4 +1,5 @@
 """Mouse events sent straight to a widget, so a drag works without a window system."""
+
 from PyQt5.QtCore import QEvent, QPointF, Qt
 from PyQt5.QtGui import QMouseEvent
 from PyQt5.QtWidgets import QApplication

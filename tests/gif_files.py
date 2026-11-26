@@ -1,4 +1,5 @@
 """GIF files for the tests, written with PIL."""
+
 from PIL import Image
 
 RED, GREEN, BLUE = (255, 0, 0), (0, 255, 0), (0, 0, 255)

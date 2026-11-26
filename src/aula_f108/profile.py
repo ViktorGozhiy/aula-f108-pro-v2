@@ -5,6 +5,7 @@ The file holds decoded fields, not raw bytes: the settings, the LED effect, the 
 not part of it. An import checks the whole file first and then gives one write request per block, so the worker writes
 the fields onto a fresh read and every byte the application does not model keeps the keyboard's value.
 """
+
 import dataclasses
 import json
 from pathlib import Path
@@ -25,8 +26,16 @@ SETTINGS_FIELDS = {"win_lock": bool, "sleep_minutes": int, "debounce": int, "pol
 LED_EFFECT_FIELDS = {"mode": int, "colour": tuple, "colourful": bool, "brightness": int, "speed": int, "direction": int}
 LIGHT_BOX_FIELDS = {"mode": int, "colour": tuple, "brightness": int, "speed": int}
 ACTION_TYPES = {
-    "default": Default, "keyboard": KeyboardKey, "consumer": Consumer, "mouse": Mouse, "macro": Macro,
-    "combo": Combo, "tap_hold": TapHold, "toggle": Toggle, "function": Function, "raw": Raw,
+    "default": Default,
+    "keyboard": KeyboardKey,
+    "consumer": Consumer,
+    "mouse": Mouse,
+    "macro": Macro,
+    "combo": Combo,
+    "tap_hold": TapHold,
+    "toggle": Toggle,
+    "function": Function,
+    "raw": Raw,
 }
 TYPE_NAMES = {action_type: name for name, action_type in ACTION_TYPES.items()}
 LIST_FIELDS = frozenset({("combo", "modifiers"), ("raw", "entry")})
@@ -66,14 +75,18 @@ def export_profile(values: dict, colours: dict) -> dict:
             "direction": effect.direction,
         },
         "light_box": {
-            "mode": box.mode, "colour": list(colours["light_box"]), "brightness": box.brightness, "speed": box.speed,
+            "mode": box.mode,
+            "colour": list(colours["light_box"]),
+            "brightness": box.brightness,
+            "speed": box.speed,
         },
         "key_colours": {str(index): list(values["key_colours"].colours[index]) for index in keys},
         "base_keys": {str(index): action_to_json(values["base_keys"].actions[index]) for index in keys},
         "fn_keys": {str(index): action_to_json(values["fn_keys"].actions[index]) for index in keys},
         "macros": {
             str(slot): [dataclasses.asdict(action) for action in actions]
-            for slot, actions in enumerate(values["macros"].macros) if actions
+            for slot, actions in enumerate(values["macros"].macros)
+            if actions
         },
     }
 

@@ -1,4 +1,5 @@
 """Page "Settings": polling rate, sleep, debounce, Win/Mac mode and Win-key lock (settings block)."""
+
 from PyQt5.QtWidgets import QCheckBox, QFormLayout, QLabel, QSpinBox
 
 from aula_f108.blocks.settings import POLLING_RATES_HZ
@@ -49,7 +50,8 @@ class SettingsPage(Page):
         form.addRow("", self.win_lock)
 
         self.polling_rate.currentIndexChanged.connect(
-            lambda index: self._request(polling_rate=self.polling_rate.itemData(index)))
+            lambda index: self._request(polling_rate=self.polling_rate.itemData(index))
+        )
         self.sleep.valueChanged.connect(lambda value: self._request(sleep_minutes=value))
         self.debounce.valueChanged.connect(lambda value: self._request(debounce=value))
         self.system.currentIndexChanged.connect(lambda index: self._request(mac_mode=self.system.itemData(index)))

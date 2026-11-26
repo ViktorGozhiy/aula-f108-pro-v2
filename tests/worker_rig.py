@@ -1,4 +1,5 @@
 """A DeviceWorker connected to simulated keyboards, with a manual clock and a record of every signal."""
+
 from aula_f108.hidraw import CommandInterface
 from aula_f108.worker import DeviceWorker
 
@@ -26,7 +27,11 @@ class Rig:
         self.opened_report_sizes = []  # (path, report size asked for) of every open
         self.events = []
         self.worker = DeviceWorker(
-            find_interfaces=self._find, open_device=self._open, time_scale=0.01, clock=self.clock, idle_wait=0,
+            find_interfaces=self._find,
+            open_device=self._open,
+            time_scale=0.01,
+            clock=self.clock,
+            idle_wait=0,
         )
         self.worker.state_changed.connect(lambda state: self.events.append(("state", state)))
         self.worker.block_read.connect(lambda name, value: self.events.append(("read", name, value)))
@@ -34,11 +39,14 @@ class Rig:
         self.worker.block_written.connect(lambda name, value: self.events.append(("written", name, value)))
         self.worker.write_failed.connect(lambda name, message: self.events.append(("write_failed", name, message)))
         self.worker.batch_update_finished.connect(
-            lambda batch, name, ok, message: self.events.append(("batch_update_finished", batch, name, ok, message)))
+            lambda batch, name, ok, message: self.events.append(("batch_update_finished", batch, name, ok, message))
+        )
         self.worker.upload_progress.connect(
-            lambda kind, sent, total: self.events.append(("progress", kind, sent, total)))
+            lambda kind, sent, total: self.events.append(("progress", kind, sent, total))
+        )
         self.worker.upload_finished.connect(
-            lambda kind, outcome: self.events.append(("upload_finished", kind, outcome)))
+            lambda kind, outcome: self.events.append(("upload_finished", kind, outcome))
+        )
         self.worker.factory_reset_sent.connect(lambda: self.events.append(("factory_reset_sent",)))
 
     def step(self, times: int = 1) -> None:
@@ -59,11 +67,15 @@ class Rig:
             if connection.endswith(BULK_SUFFIX):
                 continue
             bulk = self.devices.get(connection + BULK_SUFFIX)
-            interfaces.append(CommandInterface(
-                f"/dev/sim-{connection}", connection, getattr(device, "report_size", 64),
-                None if bulk is None else f"/dev/sim-{connection}{BULK_SUFFIX}",
-                getattr(bulk, "report_size", 0),
-            ))
+            interfaces.append(
+                CommandInterface(
+                    f"/dev/sim-{connection}",
+                    connection,
+                    getattr(device, "report_size", 64),
+                    None if bulk is None else f"/dev/sim-{connection}{BULK_SUFFIX}",
+                    getattr(bulk, "report_size", 0),
+                )
+            )
         return interfaces
 
     def _open(self, path, report_size):

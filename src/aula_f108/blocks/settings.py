@@ -1,4 +1,5 @@
 """GET / SET_GAME_MODE (0x11 / 0x21): Win lock, sleep, debounce, cable polling rate, Win/Mac mode."""
+
 from dataclasses import dataclass
 
 from aula_f108.blocks import Block, check_fields, check_range, check_size

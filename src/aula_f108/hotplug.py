@@ -2,6 +2,7 @@
 
 The events only trigger an immediate probe. The connection state belongs to the worker.
 """
+
 import socket
 import sys
 
@@ -18,7 +19,9 @@ MESSAGE_SIZE = 65536
 
 def open_uevent_socket() -> socket.socket:
     sock = socket.socket(
-        socket.AF_NETLINK, socket.SOCK_DGRAM | socket.SOCK_NONBLOCK | socket.SOCK_CLOEXEC, NETLINK_KOBJECT_UEVENT,
+        socket.AF_NETLINK,
+        socket.SOCK_DGRAM | socket.SOCK_NONBLOCK | socket.SOCK_CLOEXEC,
+        NETLINK_KOBJECT_UEVENT,
     )
     sock.bind((0, UDEV_GROUP))
     return sock
@@ -31,7 +34,7 @@ def is_hidraw_change(message: bytes) -> bool:
     read from the offset the header gives. A kernel message has no header.
     """
     if message.startswith(LIBUDEV_PREFIX):
-        message = message[int.from_bytes(message[PROPERTIES_OFFSET], sys.byteorder):]
+        message = message[int.from_bytes(message[PROPERTIES_OFFSET], sys.byteorder) :]
     fields = message.split(b"\x00")
     return HIDRAW_SUBSYSTEM in fields and any(action in fields for action in HIDRAW_ACTIONS)
 

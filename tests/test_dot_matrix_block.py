@@ -32,7 +32,8 @@ def test_character_mode_sets_only_the_two_colours():
 
 
 def test_character_mode_is_the_default_mode():
-    assert dot_matrix.encode_into(READ, {"background": (1, 2, 3), "text": (4, 5, 6)}) == bytes([1, 2, 3, 4, 5, 6, 0, 0, 0])
+    encoded = dot_matrix.encode_into(READ, {"background": (1, 2, 3), "text": (4, 5, 6)})
+    assert encoded == bytes([1, 2, 3, 4, 5, 6, 0, 0, 0])
 
 
 def test_missing_colours_are_written_as_black():

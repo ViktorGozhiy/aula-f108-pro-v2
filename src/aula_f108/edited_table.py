@@ -23,7 +23,8 @@ class EditedTable:
         whose value it holds. Later edits stay."""
         self.set_base(table)
         self._edits = {
-            index: (seq, value) for index, (seq, value) in self._edits.items()
+            index: (seq, value)
+            for index, (seq, value) in self._edits.items()
             if seq > applied or value != self._base[index]
         }
 

@@ -3,8 +3,8 @@ from PyQt5.QtWidgets import QMessageBox
 
 from aula_f108.blocks import led_effect, light_box
 from aula_f108.blocks.light_box import LightBox
-from aula_f108.ui.backlight_page import BacklightPage
 from aula_f108.ui import main_window
+from aula_f108.ui.backlight_page import BacklightPage
 from aula_f108.ui.device_page import DevicePage
 from aula_f108.ui.light_box_page import LightBoxPage
 from aula_f108.ui.settings_page import SettingsPage
@@ -33,8 +33,15 @@ def test_builds_every_page(qtbot, tmp_path):
     window, _rig, _settings = make_window(qtbot, tmp_path, cable=SimulatedKeyboard())
     titles = [window.sidebar.item(row).text() for row in range(window.sidebar.count())]
     assert titles == [
-        "Backlight", "Key colours", "Key animation", "Side lighting", "7×7 display", "Keys", "Macros",
-        "Settings", "Device",
+        "Backlight",
+        "Key colours",
+        "Key animation",
+        "Side lighting",
+        "7×7 display",
+        "Keys",
+        "Macros",
+        "Settings",
+        "Device",
     ]
     assert isinstance(window.pages[0], BacklightPage)
     assert isinstance(window.pages[-1], DevicePage)
@@ -73,7 +80,8 @@ def test_dongle_shows_charging(qtbot, tmp_path):
 
 @pytest.mark.parametrize(("notification", "reason"), [("55fc06", ASLEEP), ("55fc04", LINK_LOST_TEXT)])
 def test_sleep_and_link_lost_show_the_not_connected_page_and_the_reason_in_the_status_bar(
-        qtbot, tmp_path, notification, reason):
+    qtbot, tmp_path, notification, reason
+):
     sim = dongle_keyboard()
     window, rig, _settings = make_window(qtbot, tmp_path, dongle=sim)
     rig.step()

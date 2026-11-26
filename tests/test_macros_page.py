@@ -2,6 +2,7 @@ import pytest
 
 from aula_f108.blocks import macros
 from aula_f108.blocks.macros import KEYBOARD_ACTION, MOUSE_ACTION, MacroAction, Macros
+from aula_f108.ui.key_remap_page import KeyRemapPage
 from aula_f108.ui.macros_page import (
     DEFAULT_DELAY_MS,
     EXPLANATION,
@@ -11,7 +12,6 @@ from aula_f108.ui.macros_page import (
     step_text,
     used_text,
 )
-from aula_f108.ui.key_remap_page import KeyRemapPage
 from aula_f108.worker import ConnectionState
 from simkeyboard import SimulatedKeyboard
 from window_rig import make_window, page_of

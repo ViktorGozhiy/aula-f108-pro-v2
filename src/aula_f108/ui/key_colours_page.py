@@ -1,4 +1,5 @@
 """Page "Key colours": per-key colours painted on the keyboard picture and written with "Apply"."""
+
 from PyQt5.QtWidgets import QHBoxLayout, QLabel, QPushButton, QVBoxLayout
 
 from aula_f108.blocks.key_colours import ENTRIES

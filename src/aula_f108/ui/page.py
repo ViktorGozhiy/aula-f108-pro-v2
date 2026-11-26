@@ -1,4 +1,5 @@
 """Base class of the sidebar pages."""
+
 from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtWidgets import QLabel, QVBoxLayout, QWidget
 

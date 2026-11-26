@@ -1,4 +1,5 @@
 """Small widgets shared by the pages."""
+
 from contextlib import contextmanager
 
 from PyQt5.QtCore import Qt, pyqtSignal

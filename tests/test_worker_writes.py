@@ -135,7 +135,9 @@ def test_ordered_writes_report_each_request_of_their_batch():
     rig.step(3)
     assert other != batch
     assert rig.of_kind("batch_update_finished") == [
-        (batch, "led_effect", True, ""), (batch, "settings", True, ""), (other, "settings", True, ""),
+        (batch, "led_effect", True, ""),
+        (batch, "settings", True, ""),
+        (other, "settings", True, ""),
     ]
     assert [event[0] for event in rig.events].count("written") == 3
 
@@ -154,7 +156,10 @@ def test_ordered_write_of_an_invalid_change_reports_its_batch():
     rig.step(2)
     message = f"{NOT_WRITTEN}. debounce must be within 1..5, got 9"
     assert rig.of_kind("write_failed") == [("settings", message)]
-    assert rig.of_kind("batch_update_finished") == [(batch, "settings", False, message), (batch, "led_effect", True, "")]
+    assert rig.of_kind("batch_update_finished") == [
+        (batch, "settings", False, message),
+        (batch, "led_effect", True, ""),
+    ]
 
 
 def test_ordered_write_without_a_reply_reports_its_batch():
@@ -183,7 +188,8 @@ def test_ordered_writes_dropped_by_a_lost_keyboard_report_their_batch():
     rig.step()
     message = f"{NOT_WRITTEN}. {GONE}."
     assert rig.of_kind("batch_update_finished") == [
-        (batch, "settings", False, message), (batch, "led_effect", False, message),
+        (batch, "settings", False, message),
+        (batch, "led_effect", False, message),
     ]
 
 
@@ -196,7 +202,8 @@ def test_ordered_writes_without_a_keyboard_report_their_batch():
     rig.step()
     message = f"{NOT_WRITTEN}. Keyboard not connected."
     assert rig.of_kind("batch_update_finished") == [
-        (batch, "led_effect", False, message), (batch, "settings", False, message),
+        (batch, "led_effect", False, message),
+        (batch, "settings", False, message),
     ]
 
 
@@ -328,7 +335,10 @@ def test_win_mac_change_reads_the_settings_and_both_key_tables_again():
     rig.step()
     assert transfers(sim)[-5:] == [0x11, 0x21, 0x11, 0x12, 0x16]
     assert [event[:2] for event in rig.events] == [
-        ("written", "settings"), ("read", "settings"), ("read", "base_keys"), ("read", "fn_keys"),
+        ("written", "settings"),
+        ("read", "settings"),
+        ("read", "base_keys"),
+        ("read", "fn_keys"),
     ]
 
 

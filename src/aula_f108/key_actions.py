@@ -3,6 +3,7 @@
 An entry is [page, p1, p2, p3]. An entry decodes to a typed action only when that action encodes back to the same four
 bytes; every other entry, SOCD and the magnetic-switch pages included, decodes to Raw and is written back unchanged.
 """
+
 from dataclasses import dataclass
 
 from aula_f108.blocks import check_range
@@ -19,11 +20,11 @@ TOGGLE_PAGE = 10
 FUNCTION_PAGE = 13
 FN_USAGE = 0xAF  # the keyboard usage of the Fn key
 MOUSE_BUTTON = 1  # Mouse.kind of a button; the value is the button mask
-MOUSE_WHEEL = 3   # Mouse.kind of the wheel; the value is 1 (up) or 0xFF (down)
+MOUSE_WHEEL = 3  # Mouse.kind of the wheel; the value is 1 (up) or 0xFF (down)
 MOUSE_KINDS = (MOUSE_BUTTON, MOUSE_WHEEL)
 MACRO_SLOTS = 100
-MACRO_ONCE = 0       # play the macro once
-MACRO_TIMES = 1      # play it `count` times
+MACRO_ONCE = 0  # play the macro once
+MACRO_TIMES = 1  # play it `count` times
 MACRO_UNTIL_KEY = 2  # play it until the next key press
 MACRO_MODES = (MACRO_ONCE, MACRO_TIMES, MACRO_UNTIL_KEY)
 # The modifiers the vendor offers for a combo, in its order: L-Ctrl, R-Ctrl, L-Shift, R-Shift, L-Alt, R-Alt, L-Win
@@ -51,13 +52,13 @@ class Consumer:
 
 @dataclass(frozen=True)
 class Mouse:
-    kind: int   # MOUSE_BUTTON or MOUSE_WHEEL
+    kind: int  # MOUSE_BUTTON or MOUSE_WHEEL
     value: int  # button mask, or 1 / 0xFF for the wheel
 
 
 @dataclass(frozen=True)
 class Macro:
-    slot: int       # 0..99, shown as M1..M100
+    slot: int  # 0..99, shown as M1..M100
     mode: int = MACRO_ONCE
     count: int = 1  # the number of plays in MACRO_TIMES mode
 
@@ -65,13 +66,13 @@ class Macro:
 @dataclass(frozen=True)
 class Combo:
     modifiers: tuple[int, ...]  # one or two of COMBO_MODIFIERS
-    usage: int                  # the key pressed with them
+    usage: int  # the key pressed with them
 
 
 @dataclass(frozen=True)
 class TapHold:
-    hold: int     # the key sent when the key is held
-    tap: int      # the key sent when the key is tapped
+    hold: int  # the key sent when the key is held
+    tap: int  # the key sent when the key is tapped
     time_ms: int  # how long a press must last to count as a hold
 
 

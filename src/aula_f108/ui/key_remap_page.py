@@ -1,4 +1,5 @@
 """Page "Keys": the actions of the keys on the base layer and the Fn layer, written with "Apply"."""
+
 from PyQt5.QtWidgets import QHBoxLayout, QLabel, QMessageBox, QPushButton, QVBoxLayout
 
 from aula_f108.action_names import action_label
@@ -43,7 +44,7 @@ class KeyRemapPage(Page):
         # The newest edit that the pending write of a layer carries, None while no write of that layer is pending.
         # "Apply" and "Restore defaults" stay disabled while a write is pending.
         self._applied = dict.fromkeys(LAYERS)
-        self._loaded = set()   # the layers read from the keyboard so far
+        self._loaded = set()  # the layers read from the keyboard so far
         self._mac_mode = None  # the Win/Mac mode of the last settings value, None before the first one
         self._selected = None  # the key index chosen on the picture
         self.explanation = QLabel(EXPLANATION)
@@ -168,7 +169,9 @@ class KeyRemapPage(Page):
     def _confirm_reset(self) -> None:
         layer = self.current_layer()
         answer = QMessageBox.question(
-            self, RESET_TITLE, reset_question(layer),
+            self,
+            RESET_TITLE,
+            reset_question(layer),
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
             QMessageBox.StandardButton.No,
         )

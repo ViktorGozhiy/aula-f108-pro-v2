@@ -3,6 +3,7 @@
 Qt 5 can crash in fontconfig while looking up a fallback font for a glyph the UI font lacks, so every name holds only
 ASCII: the vendor's arrows and its one CJK full stop are replaced.
 """
+
 import json
 from dataclasses import dataclass
 from functools import cache
@@ -14,12 +15,26 @@ GLYPHS = {"←": "Left", "↓": "Down", "↑": "Up", "→": "Right", "。": "."}
 # Keyboard usages whose vendor name is a placeholder: two keys of other layouts, and F13..F25, which the vendor names
 # after the F108 keys whose default actions it never sends.
 KEY_NAMES = {
-    50: "Non-US #", 100: "Non-US \\", 133: "F13", 135: "F15", 136: "F16", 137: "F17", 138: "F18", 139: "F19",
-    144: "F24", 145: "F25",
+    50: "Non-US #",
+    100: "Non-US \\",
+    133: "F13",
+    135: "F15",
+    136: "F16",
+    137: "F17",
+    138: "F18",
+    139: "F19",
+    144: "F24",
+    145: "F25",
 }
 # The vendor's labels of the combo modifiers (it labels 0x65 R-Win).
 MODIFIER_NAMES = {
-    0xE0: "L-Ctrl", 0xE4: "R-Ctrl", 0xE1: "L-Shift", 0xE5: "R-Shift", 0xE2: "L-Alt", 0xE6: "R-Alt", 0xE3: "L-Win",
+    0xE0: "L-Ctrl",
+    0xE4: "R-Ctrl",
+    0xE1: "L-Shift",
+    0xE5: "R-Shift",
+    0xE2: "L-Alt",
+    0xE6: "R-Alt",
+    0xE3: "L-Win",
     0x65: "R-Win",
 }
 OFFERED_FUNCTION_GROUP = 2  # the uiGroup of the functions the vendor offers for this keyboard
@@ -27,10 +42,10 @@ OFFERED_FUNCTION_GROUP = 2  # the uiGroup of the functions the vendor offers for
 
 @dataclass(frozen=True)
 class Names:
-    keys: dict               # HID keyboard usage -> name, in the vendor's order
-    media: dict              # consumer usage -> name
-    mouse: dict              # (Mouse.kind, Mouse.value) -> name
-    functions: dict          # function id -> name
+    keys: dict  # HID keyboard usage -> name, in the vendor's order
+    media: dict  # consumer usage -> name
+    mouse: dict  # (Mouse.kind, Mouse.value) -> name
+    functions: dict  # function id -> name
     offered_functions: tuple  # the function ids the vendor offers, in its order
 
 

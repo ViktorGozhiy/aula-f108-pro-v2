@@ -1,10 +1,19 @@
 """Page "Side lighting": the light strip around the keyboard (light box block)."""
+
 from PyQt5.QtCore import QSettings
 from PyQt5.QtWidgets import QFormLayout, QLabel
 
 from aula_f108.blocks.light_box import COLOUR_MODES
 from aula_f108.ui.page import Page
-from aula_f108.ui.widgets import WHITE, ColourButton, colour_name, make_combo, make_slider, signals_blocked, stored_colour
+from aula_f108.ui.widgets import (
+    WHITE,
+    ColourButton,
+    colour_name,
+    make_combo,
+    make_slider,
+    signals_blocked,
+    stored_colour,
+)
 
 MODE_NAMES = {
     1: "Light Flow",

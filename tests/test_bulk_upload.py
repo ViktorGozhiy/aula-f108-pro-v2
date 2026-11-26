@@ -18,8 +18,8 @@ def test_nine_frame_key_animation_is_one_chunk_on_the_cable_bulk_interface():
     packet = sim.packets[0]
     assert len(packet) == 4104
     assert packet[:8].hex(" ") == "aa 42 00 00 00 01 00 00"
-    assert packet[8:8 + 2920] == SPEC_VECTOR
-    assert packet[8 + 2920:] == bytes(4096 - 2920)
+    assert packet[8 : 8 + 2920] == SPEC_VECTOR
+    assert packet[8 + 2920 :] == bytes(4096 - 2920)
 
 
 def test_dongle_sends_24_byte_chunks_with_the_vendor_header():
@@ -41,8 +41,12 @@ def test_payload_of_exactly_two_chunks_takes_two_packets():
 def test_progress_is_reported_after_every_chunk():
     _sim, protocol = make_protocol(32)
     calls = []
-    assert protocol.upload(0x41, bytes(49), progress=lambda sent, total: calls.append((sent, total)),
-                           cancelled=lambda: False) is True
+    assert (
+        protocol.upload(
+            0x41, bytes(49), progress=lambda sent, total: calls.append((sent, total)), cancelled=lambda: False
+        )
+        is True
+    )
     assert calls == [(1, 3), (2, 3), (3, 3)]
 
 

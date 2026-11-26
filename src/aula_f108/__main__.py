@@ -1,4 +1,5 @@
 """Start the configurator: python -m aula_f108."""
+
 import logging
 import sys
 

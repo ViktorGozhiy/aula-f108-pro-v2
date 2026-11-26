@@ -1,4 +1,5 @@
 """Page "Key animation": a GIF shown on the keys, previewed on the keyboard picture and uploaded with 0x42."""
+
 from pathlib import Path
 
 from PyQt5.QtCore import QTimer
@@ -98,4 +99,5 @@ class KeyAnimationPage(AnimationPage):
         self._show_frame()
 
     def _show_frame(self) -> None:
-        self.keyboard.set_colours({key.index: colour for key, colour in zip(self._keys, self._frames[self._frame])})
+        frame = self._frames[self._frame]
+        self.keyboard.set_colours({key.index: colour for key, colour in zip(self._keys, frame, strict=True)})

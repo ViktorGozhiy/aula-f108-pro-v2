@@ -1,4 +1,5 @@
 """GET_DEVICE_INFO (0x10): identity, firmware version, battery and frame limits. Read only."""
+
 from dataclasses import dataclass
 
 from aula_f108.blocks import Block, check_size

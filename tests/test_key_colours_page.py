@@ -130,10 +130,13 @@ def test_read_after_an_apply_does_not_switch_the_effect(read_page):
     assert read_page.requests == [("key_colours", {"colours": {}})]
 
 
-@pytest.mark.parametrize("end", [
-    lambda page: page.show_write_failed("key_colours", "Change not written."),
-    lambda page: page.show_connection(ConnectionState("not_connected", reason="Keyboard disconnected")),
-])
+@pytest.mark.parametrize(
+    "end",
+    [
+        lambda page: page.show_write_failed("key_colours", "Change not written."),
+        lambda page: page.show_connection(ConnectionState("not_connected", reason="Keyboard disconnected")),
+    ],
+)
 def test_a_failed_apply_does_not_switch_the_effect_on_a_later_write(read_page, end):
     read_page.apply.click()
     end(read_page)

@@ -21,15 +21,15 @@ def make_keyboard(report_size=64):
 
 def store(sim, slot, offset, body):
     """Put a macro body into the simulated macro memory and point the slot at it."""
-    sim.blocks["macros"][slot * 4:slot * 4 + 4] = offset.to_bytes(4, "little")
-    sim.blocks["macros"][offset:offset + len(body)] = body
+    sim.blocks["macros"][slot * 4 : slot * 4 + 4] = offset.to_bytes(4, "little")
+    sim.blocks["macros"][offset : offset + len(body)] = body
 
 
 def block_with(slot, offset, body):
     raw = bytearray(EMPTY)
-    raw[slot * 4:slot * 4 + 4] = offset.to_bytes(4, "little")
+    raw[slot * 4 : slot * 4 + 4] = offset.to_bytes(4, "little")
     raw.extend(bytes(max(0, offset + len(body) - len(raw))))
-    raw[offset:offset + len(body)] = body
+    raw[offset : offset + len(body)] = body
     return bytes(raw)
 
 
@@ -50,7 +50,9 @@ def test_decodes_the_captured_index_as_empty():
 def test_decodes_each_action():
     raw = block_with(3, 400, bytes([6, 0, 0, 0, 10, 0, A, 0xB0, 0, 1, 1, 0x90, 5, 0, 1, 0x10]))
     assert macros.decode(raw).macros[3] == (
-        PRESS_A, MacroAction(256, 1, True, MOUSE_ACTION), MacroAction(5, 1, False, MOUSE_ACTION),
+        PRESS_A,
+        MacroAction(256, 1, True, MOUSE_ACTION),
+        MacroAction(5, 1, False, MOUSE_ACTION),
     )
 
 
@@ -128,11 +130,14 @@ def test_reads_an_empty_macro_whose_header_ends_at_the_address_limit():
     assert macros.decode(keyboard.read(BLOCK)).macros[0] == ()
 
 
-@pytest.mark.parametrize(("offset", "body", "message"), [
-    (399, bytes(4), "M1 points to address 399"),
-    (0xFFFD, bytes(3), "M1 points to address 65533"),
-    (0xFFF8, bytes([4, 0, 0, 0]), "M1 ends at address 65540"),
-])
+@pytest.mark.parametrize(
+    ("offset", "body", "message"),
+    [
+        (399, bytes(4), "M1 points to address 399"),
+        (0xFFFD, bytes(3), "M1 points to address 65533"),
+        (0xFFF8, bytes([4, 0, 0, 0]), "M1 ends at address 65540"),
+    ],
+)
 def test_read_refuses_a_macro_outside_the_memory(offset, body, message):
     sim, keyboard = make_keyboard()
     store(sim, 0, offset, body)
@@ -193,14 +198,17 @@ def test_encode_into_refuses_unknown_fields():
         macros.encode_into(EMPTY, {"actions": {}})
 
 
-@pytest.mark.parametrize(("action", "message"), [
-    (MacroAction(-1, A, True), "delay"),
-    (MacroAction(0x10000, A, True), "delay"),
-    (MacroAction(0, -1, True), "key code"),
-    (MacroAction(0, 0x100, True), "key code"),
-    (MacroAction(0, A, True, -1), "action type"),
-    (MacroAction(0, A, True, 8), "action type"),
-])
+@pytest.mark.parametrize(
+    ("action", "message"),
+    [
+        (MacroAction(-1, A, True), "delay"),
+        (MacroAction(0x10000, A, True), "delay"),
+        (MacroAction(0, -1, True), "key code"),
+        (MacroAction(0, 0x100, True), "key code"),
+        (MacroAction(0, A, True, -1), "action type"),
+        (MacroAction(0, A, True, 8), "action type"),
+    ],
+)
 def test_encode_into_refuses_values_an_action_cannot_hold(action, message):
     with pytest.raises(ValueError, match=message):
         macros.encode_into(EMPTY, {"macros": {0: (action,)}})

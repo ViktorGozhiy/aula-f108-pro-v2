@@ -16,7 +16,12 @@ FIXED_LED_BYTES = {4: 0xFF, 14: 0xAA, 15: 0x55}
 
 def test_led_effect_decodes_the_cable_read():
     assert led_effect.decode(load_hex("wired-13.hex")) == LedEffect(
-        mode=1, colour=(0, 255, 255), colourful=False, brightness=5, speed=3, direction=0,
+        mode=1,
+        colour=(0, 255, 255),
+        colourful=False,
+        brightness=5,
+        speed=3,
+        direction=0,
     )
 
 
@@ -115,7 +120,11 @@ def test_led_effect_refuses_bad_colour_and_unknown_field():
 
 def test_light_box_decodes_the_cable_read():
     assert light_box.decode(load_hex("wired-1B.hex")) == LightBox(
-        mode=1, colour=(255, 0, 0), colourful=True, brightness=2, speed=5,
+        mode=1,
+        colour=(255, 0, 0),
+        colourful=True,
+        brightness=2,
+        speed=5,
     )
 
 

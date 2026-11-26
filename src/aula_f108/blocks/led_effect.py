@@ -5,6 +5,7 @@ ff ff ff, whatever was written. So a colour other than ff ff ff is the colour th
 the host set the colour (or it is white). Mode, colourful flag, brightness, speed and direction are reported as
 written.
 """
+
 from dataclasses import dataclass
 
 from aula_f108.blocks import Block, check_colour, check_fields, check_range, check_size
@@ -18,7 +19,12 @@ FORCED_COLOURFUL_MODES = frozenset({6, 8})
 FIELDS = frozenset({"mode", "colour", "colourful", "brightness", "speed", "direction"})
 # The LED effect the vendor writes before a per-key animation upload.
 ANIMATION_SETUP = {
-    "mode": ANIMATION_MODE, "colour": (255, 0, 0), "colourful": False, "brightness": 5, "speed": 0, "direction": 0,
+    "mode": ANIMATION_MODE,
+    "colour": (255, 0, 0),
+    "colourful": False,
+    "brightness": 5,
+    "speed": 0,
+    "direction": 0,
 }
 
 

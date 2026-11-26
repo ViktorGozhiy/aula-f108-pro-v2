@@ -3,6 +3,7 @@
 Each table holds 128 four-byte key actions; entry i belongs to key index i. A write sends the whole table, built from
 the fresh read with only the changed entries replaced, so entries outside the layout keep the keyboard's values.
 """
+
 import json
 from dataclasses import dataclass
 from functools import cache
@@ -26,10 +27,12 @@ class KeyTable:
 
 def decode(raw: bytes) -> KeyTable:
     check_size("key table", raw, SIZE)
-    return KeyTable(tuple(
-        key_actions.decode(raw[offset:offset + key_actions.ENTRY_SIZE])
-        for offset in range(0, SIZE, key_actions.ENTRY_SIZE)
-    ))
+    return KeyTable(
+        tuple(
+            key_actions.decode(raw[offset : offset + key_actions.ENTRY_SIZE])
+            for offset in range(0, SIZE, key_actions.ENTRY_SIZE)
+        )
+    )
 
 
 def encode_into(raw: bytes, changes: dict) -> bytes:
@@ -40,7 +43,7 @@ def encode_into(raw: bytes, changes: dict) -> bytes:
     for index, action in changes.get("actions", {}).items():
         check_range("key index", index, 0, ENTRIES - 1)
         offset = index * key_actions.ENTRY_SIZE
-        out[offset:offset + key_actions.ENTRY_SIZE] = key_actions.encode(action)
+        out[offset : offset + key_actions.ENTRY_SIZE] = key_actions.encode(action)
     return bytes(out)
 
 

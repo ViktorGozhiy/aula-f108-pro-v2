@@ -1,4 +1,5 @@
 """The key layout of the keyboard: position, size and label of its 108 keys, from data/f108v2-layout.json."""
+
 import json
 from dataclasses import dataclass
 from enum import Enum
@@ -41,8 +42,15 @@ def load_layout() -> tuple[Key, ...]:
     """The keys in the order of the layout file, which is the order of the per-key animation frames."""
     data = json.loads((DATA / "f108v2-layout.json").read_text())
     return tuple(
-        Key(key["index"], LABELS.get(key["index"], "" if key["index"] in ARROWS else key["name"]),
-            key["x"], key["y"], key["w"], key["h"], ARROWS.get(key["index"]))
+        Key(
+            key["index"],
+            LABELS.get(key["index"], "" if key["index"] in ARROWS else key["name"]),
+            key["x"],
+            key["y"],
+            key["w"],
+            key["h"],
+            ARROWS.get(key["index"]),
+        )
         for key in data["keys"]
     )
 

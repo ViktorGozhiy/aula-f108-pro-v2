@@ -1,4 +1,5 @@
 import dataclasses
+from pathlib import Path
 
 import pytest
 from PyQt5.QtWidgets import QFileDialog
@@ -75,7 +76,7 @@ def test_file_that_is_no_image_is_reported(page, tmp_path):
 
 
 def test_damaged_file_is_reported(page, tmp_path):
-    data = open(three_frame_gif(tmp_path / "a.gif"), "rb").read()
+    data = Path(three_frame_gif(tmp_path / "a.gif")).read_bytes()
     (tmp_path / "cut.gif").write_bytes(data[:111])
     page.load_file(str(tmp_path / "cut.gif"))
     assert page.frames_label.text().startswith("Could not open the file")
@@ -131,7 +132,7 @@ def test_upload_through_the_window(qtbot, tmp_path):
     page.upload_panel.upload_button.click()
     rig.step()
     payload = Animation(page._frames, 90).payload(108)
-    assert sim.uploaded(0x42)[:len(payload)] == payload
+    assert sim.uploaded(0x42)[: len(payload)] == payload
     assert led_effect.decode(bytes(sim.blocks["led_effect"])).mode == 0xFF
     assert page.upload_panel.message.text() == OUTCOME_TEXTS[UPLOAD_DONE]
     chunks = -(-len(payload) // 56)

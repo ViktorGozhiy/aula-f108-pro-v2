@@ -1,4 +1,5 @@
 """Export and import of the configuration through the device worker, started from the device page."""
+
 from PyQt5.QtCore import QObject, pyqtSignal
 
 from aula_f108 import profile
@@ -6,8 +7,13 @@ from aula_f108.keyboard import BLOCKS
 from aula_f108.profile import EXPORTED_BLOCKS, ProfileError
 
 BLOCK_NAMES = {
-    "settings": "settings", "led_effect": "backlight", "light_box": "side lighting",
-    "key_colours": "key colours", "base_keys": "base layer", "fn_keys": "Fn layer", "macros": "macros",
+    "settings": "settings",
+    "led_effect": "backlight",
+    "light_box": "side lighting",
+    "key_colours": "key colours",
+    "base_keys": "base layer",
+    "fn_keys": "Fn layer",
+    "macros": "macros",
 }
 NOTHING_TO_IMPORT = "The file holds no settings to write."
 
@@ -27,10 +33,10 @@ class ProfileController(QObject):
         super().__init__()
         self._worker = worker
         self._colours = colours
-        self._export_path = None    # the file of the running export
-        self._export_values = {}    # the blocks read for it so far
+        self._export_path = None  # the file of the running export
+        self._export_values = {}  # the blocks read for it so far
         self._import_results = None  # block name -> None while its write runs, "" when written, else the message
-        self._import_batch = None    # the id the worker gave the import's writes
+        self._import_batch = None  # the id the worker gave the import's writes
         worker.block_read.connect(self._on_read)
         worker.block_failed.connect(self._on_read_failed)
         worker.batch_update_finished.connect(self._on_import_result)

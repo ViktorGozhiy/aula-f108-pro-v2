@@ -1,4 +1,5 @@
 """The main window: sidebar of pages, the page stack and the status bar."""
+
 from PyQt5.QtCore import QSettings
 from PyQt5.QtWidgets import QHBoxLayout, QLabel, QListWidget, QMainWindow, QStackedWidget, QWidget
 
@@ -79,8 +80,15 @@ class MainWindow(QMainWindow):
     def _create_pages(self) -> list:
         self.device_page = DevicePage()
         return [
-            BacklightPage(self._settings), KeyColoursPage(), KeyAnimationPage(), LightBoxPage(self._settings),
-            DotMatrixPage(self._settings), KeyRemapPage(), MacrosPage(), SettingsPage(), self.device_page,
+            BacklightPage(self._settings),
+            KeyColoursPage(),
+            KeyAnimationPage(),
+            LightBoxPage(self._settings),
+            DotMatrixPage(self._settings),
+            KeyRemapPage(),
+            MacrosPage(),
+            SettingsPage(),
+            self.device_page,
         ]
 
     def _page(self, page_type):

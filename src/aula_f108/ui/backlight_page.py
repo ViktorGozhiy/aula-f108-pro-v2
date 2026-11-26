@@ -1,4 +1,5 @@
 """Page "Backlight": the main backlight effect (LED effect block)."""
+
 from PyQt5.QtCore import QSettings, Qt
 from PyQt5.QtWidgets import QCheckBox, QFormLayout, QLabel
 
@@ -6,7 +7,15 @@ from aula_f108.blocks.led_effect import ANIMATION_MODE, FORCED_COLOURFUL_MODES, 
 from aula_f108.ui.key_animation_page import KeyAnimationPage
 from aula_f108.ui.key_colours_page import KeyColoursPage
 from aula_f108.ui.page import Page
-from aula_f108.ui.widgets import WHITE, ColourButton, colour_name, make_combo, make_slider, signals_blocked, stored_colour
+from aula_f108.ui.widgets import (
+    WHITE,
+    ColourButton,
+    colour_name,
+    make_combo,
+    make_slider,
+    signals_blocked,
+    stored_colour,
+)
 
 MODE_NAMES = {
     0: "Off",
@@ -90,7 +99,8 @@ class BacklightPage(Page):
         self.brightness.valueChanged.connect(lambda value: self._request(brightness=value))
         self.speed.valueChanged.connect(lambda value: self._request(speed=value))
         self.direction.currentIndexChanged.connect(
-            lambda index: self._request(direction=self.direction.itemData(index)))
+            lambda index: self._request(direction=self.direction.itemData(index))
+        )
 
     def display(self, name: str, effect) -> None:
         """Show the effect. A colour other than ff ff ff is the one chosen on the keyboard and becomes the page

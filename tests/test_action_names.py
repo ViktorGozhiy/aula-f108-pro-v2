@@ -19,8 +19,14 @@ from aula_f108.key_actions import (
 def test_every_name_holds_only_ascii():
     """Qt 5 can crash in fontconfig while looking up a fallback font for a glyph the UI font lacks."""
     all_names = names()
-    for name in [*all_names.keys.values(), *all_names.media.values(), *all_names.mouse.values(),
-                 *all_names.functions.values(), *MODIFIER_NAMES.values(), *KEY_NAMES.values()]:
+    for name in [
+        *all_names.keys.values(),
+        *all_names.media.values(),
+        *all_names.mouse.values(),
+        *all_names.functions.values(),
+        *MODIFIER_NAMES.values(),
+        *KEY_NAMES.values(),
+    ]:
         assert name.isascii(), name
 
 
@@ -48,8 +54,12 @@ def test_placeholder_key_names_are_replaced():
 
 def test_entries_without_an_action_are_left_out():
     all_names = names()
-    every = [*all_names.keys.values(), *all_names.media.values(), *all_names.mouse.values(),
-             *all_names.functions.values()]
+    every = [
+        *all_names.keys.values(),
+        *all_names.media.values(),
+        *all_names.mouse.values(),
+        *all_names.functions.values(),
+    ]
     assert "VOLINC" not in every
     assert "SWITCH" not in every
 
@@ -82,23 +92,26 @@ def test_key_label_of_an_unknown_usage_is_its_number():
     assert key_label(0xB5) == "0xB5"
 
 
-@pytest.mark.parametrize(("action", "label"), [
-    (Default(), "Default"),
-    (KeyboardKey(0x04), "A"),
-    (KeyboardKey(0xB5), "0xB5"),
-    (Consumer(0xE9), "Volume +"),
-    (Consumer(0x1234), "0x1234"),
-    (Mouse(1, 1), "Mouse Left"),
-    (Mouse(3, 2), "Mouse 3:2"),
-    (Macro(4), "M5"),
-    (Combo((0xE0,), 0x06), "L-Ctrl+C"),
-    (Combo((0xE0, 0xE1), 0x29), "L-Ctrl+L-Shift+ESC"),
-    (TapHold(0xE1, 0x04, 200), "A / hold L-Shift"),
-    (Toggle(0x04), "Toggle A"),
-    (Function(1), "Factory Reset"),
-    (Function(999), "Function 999"),
-    (Raw(bytes.fromhex("0b030407")), "0B 03 04 07"),
-])
+@pytest.mark.parametrize(
+    ("action", "label"),
+    [
+        (Default(), "Default"),
+        (KeyboardKey(0x04), "A"),
+        (KeyboardKey(0xB5), "0xB5"),
+        (Consumer(0xE9), "Volume +"),
+        (Consumer(0x1234), "0x1234"),
+        (Mouse(1, 1), "Mouse Left"),
+        (Mouse(3, 2), "Mouse 3:2"),
+        (Macro(4), "M5"),
+        (Combo((0xE0,), 0x06), "L-Ctrl+C"),
+        (Combo((0xE0, 0xE1), 0x29), "L-Ctrl+L-Shift+ESC"),
+        (TapHold(0xE1, 0x04, 200), "A / hold L-Shift"),
+        (Toggle(0x04), "Toggle A"),
+        (Function(1), "Factory Reset"),
+        (Function(999), "Function 999"),
+        (Raw(bytes.fromhex("0b030407")), "0B 03 04 07"),
+    ],
+)
 def test_action_labels(action, label):
     assert action_label(action) == label
     assert label.isascii()

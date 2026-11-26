@@ -1,4 +1,5 @@
 """A MainWindow on a worker rig, with settings in a temporary file."""
+
 from PyQt5.QtCore import QSettings
 
 from aula_f108.ui.main_window import MainWindow

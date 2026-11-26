@@ -1,4 +1,5 @@
 """Controls shared by the two animation pages: the upload panel, the GIF file choice and the AnimationPage base."""
+
 from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtWidgets import QFileDialog, QHBoxLayout, QLabel, QProgressBar, QPushButton, QVBoxLayout, QWidget
 
@@ -89,7 +90,7 @@ class AnimationPage(Page):
 
     upload_kind = ""
     upload_requested = pyqtSignal(str, object)  # upload kind, payload bytes
-    cancel_upload_requested = pyqtSignal(str)   # upload kind
+    cancel_upload_requested = pyqtSignal(str)  # upload kind
 
     def __init__(self):
         super().__init__()

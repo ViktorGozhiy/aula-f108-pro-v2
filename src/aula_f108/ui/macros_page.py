@@ -1,8 +1,16 @@
 """Page "Macros": the 100 macro slots, edited here and written with "Apply"."""
+
 import dataclasses
 
 from PyQt5.QtWidgets import (
-    QFormLayout, QGridLayout, QHBoxLayout, QLabel, QListWidget, QPushButton, QSpinBox, QVBoxLayout,
+    QFormLayout,
+    QGridLayout,
+    QHBoxLayout,
+    QLabel,
+    QListWidget,
+    QPushButton,
+    QSpinBox,
+    QVBoxLayout,
 )
 
 from aula_f108.action_names import key_label
@@ -103,8 +111,9 @@ class MacrosPage(Page):
         editor.addRow("Action", self.press)
         editor.addRow("Delay", self.delay)
         step_buttons = QGridLayout()
-        for position, button in enumerate((self.add, self.add_pair, self.replace, self.remove, self.up, self.down,
-                                           self.clear)):
+        for position, button in enumerate(
+            (self.add, self.add_pair, self.replace, self.remove, self.up, self.down, self.clear)
+        ):
             step_buttons.addWidget(button, position // 2, position % 2)
         right = QVBoxLayout()
         right.addWidget(self.steps, 1)

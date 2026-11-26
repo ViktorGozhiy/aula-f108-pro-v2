@@ -278,9 +278,8 @@ def test_colour_button_text_colour_boundary(qtbot):
 def test_signals_blocked_restores_signals_after_an_error(qtbot):
     button = ColourButton()
     qtbot.addWidget(button)
-    with pytest.raises(RuntimeError):
-        with signals_blocked(button):
-            raise RuntimeError
+    with pytest.raises(RuntimeError), signals_blocked(button):
+        raise RuntimeError
     assert not button.signalsBlocked()
 
 

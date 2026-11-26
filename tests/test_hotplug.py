@@ -12,18 +12,20 @@ def udev_message(action, subsystem, bloom=bytes(8), padding=b""):
     In the header the magic, the hashes and the tag bloom filter are big-endian; header_size,
     properties_off and properties_len are in the sender's byte order.
     """
-    properties = b"\x00".join([
-        f"ACTION={action}".encode(),
-        b"DEVPATH=/devices/pci0000:00/usb1/1-2/1-2:1.2/0003:38A6:2739.0001/hidraw/hidraw11",
-        f"SUBSYSTEM={subsystem}".encode(),
-        b"DEVNAME=/dev/hidraw11",
-        b"",
-    ])
+    properties = b"\x00".join(
+        [
+            f"ACTION={action}".encode(),
+            b"DEVPATH=/devices/pci0000:00/usb1/1-2/1-2:1.2/0003:38A6:2739.0001/hidraw/hidraw11",
+            f"SUBSYSTEM={subsystem}".encode(),
+            b"DEVNAME=/dev/hidraw11",
+            b"",
+        ]
+    )
     header = (
         b"libudev\x00"
         + bytes.fromhex("feedcafe")
         + struct.pack("=III", 40, 40 + len(padding), len(properties))
-        + bytes.fromhex("1a2b3c4d" "00000000")
+        + bytes.fromhex("1a2b3c4d00000000")
         + bloom
     )
     return header + padding + properties

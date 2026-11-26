@@ -75,8 +75,9 @@ def test_main_runs_the_worker_and_cleans_up_after_the_event_loop(qtbot, tmp_path
 
 
 def run_installer(env):
-    subprocess.run(["sh", str(REPO / "packaging" / "install-desktop-entry.sh")], env=env, check=True,
-                   capture_output=True)
+    subprocess.run(
+        ["sh", str(REPO / "packaging" / "install-desktop-entry.sh")], env=env, check=True, capture_output=True
+    )
 
 
 def test_desktop_entry_is_installed_into_the_home_directory(tmp_path):

@@ -62,7 +62,9 @@ def test_read_of_a_later_mode_does_not_request_a_write(qtbot, settings):
     assert page.requests == []
 
 
-@pytest.mark.parametrize(("mode", "colour_on", "speed_on"), [(1, False, True), (2, True, False), (3, True, True), (5, False, True)])
+@pytest.mark.parametrize(
+    ("mode", "colour_on", "speed_on"), [(1, False, True), (2, True, False), (3, True, True), (5, False, True)]
+)
 def test_controls_follow_the_mode(qtbot, settings, mode, colour_on, speed_on):
     page = make_page(qtbot, settings)
     page.show_block("light_box", READ)

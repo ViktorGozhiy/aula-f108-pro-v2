@@ -14,21 +14,31 @@ def make_keyboard(report_size=64):
 
 def test_blocks_in_read_order():
     assert list(BLOCKS) == [
-        "device_info", "settings", "led_effect", "light_box", "key_colours", "dot_matrix", "base_keys", "fn_keys",
+        "device_info",
+        "settings",
+        "led_effect",
+        "light_box",
+        "key_colours",
+        "dot_matrix",
+        "base_keys",
+        "fn_keys",
         "macros",
     ]
 
 
-@pytest.mark.parametrize(("name", "fixture"), [
-    ("device_info", "wired-10.hex"),
-    ("settings", "wired-11.hex"),
-    ("led_effect", "wired-13.hex"),
-    ("key_colours", "wired-14.hex"),
-    ("dot_matrix", "wired-3D.hex"),
-    ("base_keys", "wired-12.hex"),
-    ("fn_keys", "wired-16.hex"),
-    ("macros", "wired-15.hex"),
-])
+@pytest.mark.parametrize(
+    ("name", "fixture"),
+    [
+        ("device_info", "wired-10.hex"),
+        ("settings", "wired-11.hex"),
+        ("led_effect", "wired-13.hex"),
+        ("key_colours", "wired-14.hex"),
+        ("dot_matrix", "wired-3D.hex"),
+        ("base_keys", "wired-12.hex"),
+        ("fn_keys", "wired-16.hex"),
+        ("macros", "wired-15.hex"),
+    ],
+)
 def test_reads_every_block(name, fixture):
     _sim, keyboard = make_keyboard()
     assert keyboard.read(BLOCKS[name]) == load_hex(fixture)

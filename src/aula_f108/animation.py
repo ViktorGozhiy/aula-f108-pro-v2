@@ -1,5 +1,6 @@
 """Frame animations: the frame model shared by the dot matrix (49 pixels) and the per-key animation (108 keys),
 the upload payload, GIF import and the two dot-matrix animations the application generates."""
+
 import colorsys
 import itertools
 import math
@@ -74,9 +75,7 @@ def load_gif(path: str, max_frames: int) -> tuple[list, int]:
 
 def dot_matrix_frames(images) -> list:
     """Each image scaled to 7×7, each pixel the average of its area, row-major."""
-    return [
-        list(image.resize((DOT_MATRIX_SIDE, DOT_MATRIX_SIDE), Image.Resampling.BOX).getdata()) for image in images
-    ]
+    return [list(image.resize((DOT_MATRIX_SIDE, DOT_MATRIX_SIDE), Image.Resampling.BOX).getdata()) for image in images]
 
 
 def key_frames(images, keys) -> list:
@@ -86,11 +85,15 @@ def key_frames(images, keys) -> list:
     for image in images:
         pixels = image.load()
         width, height = image.size
-        frames.append([
-            pixels[int((key.centre[0] - left) * width / (right - left)),
-                   int((key.centre[1] - top) * height / (bottom - top))]
-            for key in keys
-        ])
+        frames.append(
+            [
+                pixels[
+                    int((key.centre[0] - left) * width / (right - left)),
+                    int((key.centre[1] - top) * height / (bottom - top)),
+                ]
+                for key in keys
+            ]
+        )
     return frames
 
 

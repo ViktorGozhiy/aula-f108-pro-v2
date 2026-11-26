@@ -56,7 +56,12 @@ Before starting, close other programs that talk to the keyboard: the vendor's we
 Test environment:
 
     /usr/bin/python3 -m venv --system-site-packages .venv
-    .venv/bin/pip install pytest pytest-qt
+    .venv/bin/pip install pytest pytest-qt pre-commit
+    .venv/bin/pre-commit install
+
+The pre-commit hook runs ruff (lint with fixes, then format) on the staged files. To check every file:
+
+    .venv/bin/pre-commit run --all-files
 
 Tests:
 

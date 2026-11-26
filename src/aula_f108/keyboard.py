@@ -1,14 +1,33 @@
 """The keyboard's configuration blocks over one command interface."""
+
 from aula_f108.blocks import (
-    Block, device_info, dot_matrix, key_colours, key_tables, led_effect, light_box, macros, settings,
+    Block,
+    device_info,
+    dot_matrix,
+    key_colours,
+    key_tables,
+    led_effect,
+    light_box,
+    macros,
+    settings,
 )
 from aula_f108.protocol import Protocol
 
 # The order is the order in which a connect reads the blocks.
-BLOCKS = {block.name: block for block in (
-    device_info.BLOCK, settings.BLOCK, led_effect.BLOCK, light_box.BLOCK, key_colours.BLOCK, dot_matrix.BLOCK,
-    key_tables.BASE_BLOCK, key_tables.FN_BLOCK, macros.BLOCK,
-)}
+BLOCKS = {
+    block.name: block
+    for block in (
+        device_info.BLOCK,
+        settings.BLOCK,
+        led_effect.BLOCK,
+        light_box.BLOCK,
+        key_colours.BLOCK,
+        dot_matrix.BLOCK,
+        key_tables.BASE_BLOCK,
+        key_tables.FN_BLOCK,
+        macros.BLOCK,
+    )
+}
 
 
 class Keyboard:

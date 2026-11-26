@@ -1,4 +1,5 @@
 """Access to the keyboard's hidraw interfaces: discovery through sysfs and raw report I/O."""
+
 import fcntl
 import os
 import select
@@ -67,7 +68,7 @@ def parse_report_descriptor(descriptor: bytes) -> DescriptorInfo:
             position += 3 + descriptor[position + 1]
             continue
         size = (0, 1, 2, 4)[prefix & 0x03]
-        value = int.from_bytes(descriptor[position + 1:position + 1 + size], "little")
+        value = int.from_bytes(descriptor[position + 1 : position + 1 + size], "little")
         position += 1 + size
         item = prefix & 0xFC
         if item == 0x04:

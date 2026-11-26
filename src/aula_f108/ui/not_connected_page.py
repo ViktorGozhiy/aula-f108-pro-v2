@@ -1,4 +1,5 @@
 """The page shown while no keyboard answers."""
+
 from PyQt5.QtGui import QFont
 from PyQt5.QtWidgets import QLabel, QVBoxLayout, QWidget
 

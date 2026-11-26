@@ -1,7 +1,6 @@
 import pytest
 
-from aula_f108.blocks import check_colour, check_fields, check_range, check_size
-from aula_f108.blocks import device_info, settings
+from aula_f108.blocks import check_colour, check_fields, check_range, check_size, device_info, settings
 from aula_f108.blocks.device_info import DeviceInfo
 from aula_f108.blocks.settings import Settings
 from fixture_data import load_hex
@@ -44,8 +43,14 @@ def test_check_colour():
 
 def test_device_info_decodes_the_cable_read():
     assert device_info.decode(load_hex("wired-10.hex")) == DeviceInfo(
-        vid=0x38A6, pid=0x2739, firmware="1.33", work_mode=0x19, battery=0,
-        charge_status=1, gif_max_frames=512, led_max_frames=512,
+        vid=0x38A6,
+        pid=0x2739,
+        firmware="1.33",
+        work_mode=0x19,
+        battery=0,
+        charge_status=1,
+        gif_max_frames=512,
+        led_max_frames=512,
     )
 
 
@@ -81,7 +86,11 @@ def test_device_info_is_read_only():
 
 def test_settings_decodes_the_cable_read():
     assert settings.decode(load_hex("wired-11.hex")) == Settings(
-        win_lock=False, sleep_minutes=1, debounce=3, polling_rate=6, mac_mode=False,
+        win_lock=False,
+        sleep_minutes=1,
+        debounce=3,
+        polling_rate=6,
+        mac_mode=False,
     )
 
 

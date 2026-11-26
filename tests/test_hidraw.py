@@ -31,12 +31,12 @@ def test_parses_real_descriptors(fixture, expected):
 
 
 def test_skips_long_items():
-    descriptor = bytes.fromhex("fe0210aabb" "0668ff0961a101" "c0")
+    descriptor = bytes.fromhex("fe0210aabb0668ff0961a101c0")
     assert parse_report_descriptor(descriptor) == DescriptorInfo(0xFF68, 0x61, 0, 0)
 
 
 def test_reads_four_byte_item_data():
-    descriptor = bytes.fromhex("0768ff0000" "0961a101" "c0")
+    descriptor = bytes.fromhex("0768ff00000961a101c0")
     assert parse_report_descriptor(descriptor).usage_page == 0xFF68
 
 

@@ -1,5 +1,6 @@
 """The dot-matrix animation editor: a 7×7 grid of the current frame, the frame list with add, copy and delete,
 the paint colour, the speed and a preview."""
+
 from PyQt5.QtCore import QPointF, QRectF, QTimer
 from PyQt5.QtGui import QColor, QPainter, QPalette
 from PyQt5.QtWidgets import QFormLayout, QHBoxLayout, QListWidget, QPushButton, QVBoxLayout, QWidget

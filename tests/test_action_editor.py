@@ -39,31 +39,44 @@ def choose_group(editor, group):
     editor.group.setCurrentIndex(editor.group.findData(group))
 
 
-@pytest.mark.parametrize("action", [
-    Default(),
-    KeyboardKey(A),
-    KeyboardKey(0xB5),
-    Consumer(0xE9),
-    Consumer(0x1234),
-    Mouse(1, 2),
-    Mouse(3, 0xFF),
-    Mouse(1, 0x20),
-    Macro(41),
-    Macro(99, 1, 7),
-    Macro(0, 2),
-    Combo((0xE0,), A),
-    Combo((0xE0, 0x65), ESC),
-    TapHold(L_SHIFT, A, 250),
-    Toggle(A),
-    Function(9),
-    Function(30),
-])
+@pytest.mark.parametrize(
+    "action",
+    [
+        Default(),
+        KeyboardKey(A),
+        KeyboardKey(0xB5),
+        Consumer(0xE9),
+        Consumer(0x1234),
+        Mouse(1, 2),
+        Mouse(3, 0xFF),
+        Mouse(1, 0x20),
+        Macro(41),
+        Macro(99, 1, 7),
+        Macro(0, 2),
+        Combo((0xE0,), A),
+        Combo((0xE0, 0x65), ESC),
+        TapHold(L_SHIFT, A, 250),
+        Toggle(A),
+        Function(9),
+        Function(30),
+    ],
+)
 def test_shows_an_action_and_builds_it_back(editor, action):
     editor.show_action(action)
-    assert editor.group.currentData() == {
-        Default: "default", KeyboardKey: "keyboard", Consumer: "media", Mouse: "mouse", Macro: "macro",
-        Combo: "combo", TapHold: "tap_hold", Toggle: "toggle", Function: "function",
-    }[type(action)]
+    assert (
+        editor.group.currentData()
+        == {
+            Default: "default",
+            KeyboardKey: "keyboard",
+            Consumer: "media",
+            Mouse: "mouse",
+            Macro: "macro",
+            Combo: "combo",
+            TapHold: "tap_hold",
+            Toggle: "toggle",
+            Function: "function",
+        }[type(action)]
+    )
     assert editor.stack.currentIndex() == editor.group.currentIndex()
     assert editor.action() == action
     assert editor.chosen == []

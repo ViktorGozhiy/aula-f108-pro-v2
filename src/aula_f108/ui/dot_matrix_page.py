@@ -1,4 +1,5 @@
 """Page "7×7 display": text and background colours, sound-reactive modes and frame animations of the dot matrix."""
+
 from PyQt5.QtCore import QSettings
 from PyQt5.QtWidgets import QFormLayout, QGroupBox, QHBoxLayout, QLabel, QPushButton, QVBoxLayout
 
@@ -130,6 +131,11 @@ class DotMatrixPage(AnimationPage):
             self.load_file(path)
 
     def _request_colours(self) -> None:
-        self.update_requested.emit("dot_matrix", {
-            "background": self.background_colour.colour(), "text": self.text_colour.colour(), "mode": CHARACTER_MODE,
-        })
+        self.update_requested.emit(
+            "dot_matrix",
+            {
+                "background": self.background_colour.colour(),
+                "text": self.text_colour.colour(),
+                "mode": CHARACTER_MODE,
+            },
+        )

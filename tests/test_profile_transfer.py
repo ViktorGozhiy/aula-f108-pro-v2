@@ -22,9 +22,7 @@ from worker_rig import Rig
 
 PRESS_A = MacroAction(10, 0x04, True)
 RELEASE_A = MacroAction(20, 0x04, False)
-ALL_WRITTEN = (
-    "Written: backlight, side lighting, key colours, base layer, Fn layer, macros, settings."
-)
+ALL_WRITTEN = "Written: backlight, side lighting, key colours, base layer, Fn layer, macros, settings."
 
 
 def connected_window(qtbot, tmp_path, sim=None):
@@ -54,14 +52,14 @@ def file_of(sim, tmp_path, name="source.json"):
 
 def changed_keyboard():
     sim = SimulatedKeyboard()
-    sim.blocks["settings"][3] = 10                       # sleep after 10 minutes
-    sim.blocks["led_effect"][0] = 7                      # breathing
-    sim.blocks["light_box"][9] = 4                       # brightness 4
-    sim.blocks["key_colours"][1:4] = bytes([1, 2, 3])    # Esc
+    sim.blocks["settings"][3] = 10  # sleep after 10 minutes
+    sim.blocks["led_effect"][0] = 7  # breathing
+    sim.blocks["light_box"][9] = 4  # brightness 4
+    sim.blocks["key_colours"][1:4] = bytes([1, 2, 3])  # Esc
     sim.blocks["base_keys"][0:4] = bytes([2, 0, 0x04, 0])  # Esc types A
     sim.blocks["fn_keys"][4:8] = bytes([0x0D, 0, 0, 9])  # Fn+F1: Mac mode
     raw = macros.encode_into(bytes(sim.blocks["macros"][:400]), {"macros": {3: (PRESS_A, RELEASE_A)}})
-    sim.blocks["macros"][:len(raw)] = raw
+    sim.blocks["macros"][: len(raw)] = raw
     return sim
 
 
@@ -154,9 +152,7 @@ def test_export_with_a_failed_read_saves_nothing(qtbot, tmp_path, monkeypatch):
     export_with(window, monkeypatch, path)
     rig.step(len(EXPORTED_BLOCKS))
     assert not path.exists()
-    assert window.device_page.profile_result.text() == (
-        f"Settings not saved: could not read “macros”. {READ_FAILED}"
-    )
+    assert window.device_page.profile_result.text() == (f"Settings not saved: could not read “macros”. {READ_FAILED}")
 
 
 def test_export_stops_when_the_keyboard_is_lost(qtbot, tmp_path, monkeypatch):
@@ -213,8 +209,9 @@ def test_import_of_a_bad_file_writes_nothing(qtbot, tmp_path, monkeypatch):
     window, rig, sim = connected_window(qtbot, tmp_path)
     import_from(window, monkeypatch, path)
     rig.step()
-    assert (window.device_page.profile_result.text()
-            == "Settings not loaded: the file was not saved for AULA F108 Pro V2.")
+    assert (
+        window.device_page.profile_result.text() == "Settings not loaded: the file was not saved for AULA F108 Pro V2."
+    )
     assert sim.writes == []
     assert window.device_page.import_button.isEnabled()
 
@@ -392,12 +389,12 @@ def test_apply_of_the_key_page_during_an_import_is_disabled_and_works_after_it(q
     assert not page.apply.isEnabled()
     page.apply.click()  # ignored
     rig.step(SETTLED_STEPS)
-    assert bytes(sim.blocks[BASE][A_KEY * 4:A_KEY * 4 + 4]) != bytes([2, 0, 5, 0])
+    assert bytes(sim.blocks[BASE][A_KEY * 4 : A_KEY * 4 + 4]) != bytes([2, 0, 5, 0])
     assert page.keyboard.is_marked(A_KEY)
     assert page.apply.isEnabled()
     page.apply.click()
     rig.step(SETTLED_STEPS)
-    assert bytes(sim.blocks[BASE][A_KEY * 4:A_KEY * 4 + 4]) == bytes([2, 0, 5, 0])
+    assert bytes(sim.blocks[BASE][A_KEY * 4 : A_KEY * 4 + 4]) == bytes([2, 0, 5, 0])
     assert not page.keyboard.is_marked(A_KEY)
     assert page.edited_label.text() == ""
 
@@ -489,7 +486,7 @@ def test_import_of_one_section_does_not_finish_before_its_own_write(qtbot, tmp_p
     page.apply.click()
     rig.step(SETTLED_STEPS)
     assert bytes(sim.blocks[BASE][0:4]) == bytes([2, 0, 4, 0])
-    assert bytes(sim.blocks[BASE][(A_KEY + 1) * 4:(A_KEY + 1) * 4 + 4]) == bytes([2, 0, 6, 0])
+    assert bytes(sim.blocks[BASE][(A_KEY + 1) * 4 : (A_KEY + 1) * 4 + 4]) == bytes([2, 0, 6, 0])
     assert not page.keyboard.is_marked(A_KEY + 1)
     assert not page.apply.isEnabled()
 
@@ -502,8 +499,9 @@ def test_import_that_loses_the_keyboard_reports_the_blocks_not_written(qtbot, tm
     sim.gone = True
     rig.step()
     assert window.device_page.profile_result.text() == (
-        "Written: backlight. Not written: " + "; ".join(
-            f"{BLOCK_NAMES[block]} ({GONE})" for block in IMPORT_ORDER[1:]) + "."
+        "Written: backlight. Not written: "
+        + "; ".join(f"{BLOCK_NAMES[block]} ({GONE})" for block in IMPORT_ORDER[1:])
+        + "."
     )
 
 
